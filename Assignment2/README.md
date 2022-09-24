@@ -10,7 +10,7 @@
 3)
 4) 
 
-Variable exercises
+### Variable exercises
 1)
 2)
 3)
@@ -18,12 +18,12 @@ Variable exercises
 5) 
 6)
 
-Boolean exercises
+### Boolean exercises
 1)
 2)
 3)
 
-List exercises
+### List exercises
 1)
 2)
 3)
@@ -31,12 +31,12 @@ List exercises
 5) 
 6)
 
-Dictionary exercises
+### Dictionary exercises
 1)
 2)
 3)
 
-Array exercises
+### Array exercises
 1)
 2)
 3)
