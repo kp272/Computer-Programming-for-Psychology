@@ -1,0 +1,5 @@
+print("K")
+print("A")
+print("S")
+print("T")
+print("I")
