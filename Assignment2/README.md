@@ -1,10 +1,10 @@
-This is my set of annswers to Assignment 2:
+# This is my set of annswers to Assignment 2:
 
-Print exercises
+### Print exercises
 1) See file [yourname.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/Assignment2/yourname.py)
-2) No varriable show up in the editor
+2) No varriable showed up in the editor
 
-Operation exercises
+### Operation exercises
 1)
 2)
 3)
