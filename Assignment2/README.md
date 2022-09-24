@@ -1,4 +1,4 @@
-# This is my set of annswers to Assignment 2:
+# This is my set of answers to Assignment 2:
 
 ### Print exercises
 1) See file [yourname.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/Assignment2/yourname.py)
