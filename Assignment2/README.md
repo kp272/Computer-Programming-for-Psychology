@@ -11,7 +11,7 @@
 ```
 print(101 % 25)
 1
-```
+```.
 
 3) The "**" operator does exponentiation, and the "//" operator does division, but rounds the answer down.
 ```
