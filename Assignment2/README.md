@@ -9,6 +9,7 @@
 2) The modulo operator tells us what is left over (remainder), after we divide two numbers. 
 ```
 print(101 / 25)
+1
 ```
 4) The "**" operator . The "//" operator .
 5) 
