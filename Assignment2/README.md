@@ -11,7 +11,11 @@
 print(101 % 25)
 1
 ```
-4) The "**" operator does exponentiation, and the "//" operator does division, but rounds the answer down.
+3) The "**" operator does exponentiation, and the "//" operator does division, but rounds the answer down.
+```
+print(10 ** 2)
+100
+```
 ```
 print(3 / 4)
 0.75
@@ -28,10 +32,18 @@ print(-3 / 4)
 print(-3 // 4)
 -1
 ```
-6) 
+4) Python does follow order of operations
+```
+print(1 + 2 + 3 * 4 / 5)
+5.4
+```
+```
+print(1 + 2 + (3 * (4 / 5)))
+5.4
+```
 
 ### Variable exercises
-1)
+1) 
 2)
 3)
 4) 
