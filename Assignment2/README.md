@@ -5,10 +5,13 @@
 2) No varriable showed up in the editor
 
 ### Operation exercises
-1)
-2)
-3)
-4) 
+1) Python outputs the same values for these
+2) The modulo operator tells us what is left over (remainder), after we divide two numbers. 
+```
+print(101 / 25)
+```
+4) The "**" operator . The "//" operator .
+5) 
 
 ### Variable exercises
 1)
