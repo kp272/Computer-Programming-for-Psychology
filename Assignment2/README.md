@@ -7,10 +7,11 @@
 ### Operation exercises
 1) Python outputs the same values for these
 2) The modulo operator tells us what is left over (remainder), after we divide two numbers. 
-```
-print(101 % 25)
-1
-```
+>
+  ```
+  print(101 % 25)
+  1
+  ```
 3) The "**" operator does exponentiation, and the "//" operator does division, but rounds the answer down.
 ```
 print(10 ** 2)
