@@ -8,11 +8,27 @@
 1) Python outputs the same values for these
 2) The modulo operator tells us what is left over (remainder), after we divide two numbers. 
 ```
-print(101 / 25)
+print(101 % 25)
 1
 ```
-4) The "**" operator . The "//" operator .
-5) 
+4) The "**" operator does exponentiation, and the "//" operator does division, but rounds the answer down.
+```
+print(3 / 4)
+0.75
+```
+```
+print(3 // 4)
+0
+```
+```
+print(-3 / 4)
+-0.75
+```
+```
+print(-3 // 4)
+-1
+```
+6) 
 
 ### Variable exercises
 1)
