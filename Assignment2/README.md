@@ -89,12 +89,12 @@ True
 print ("1" == "1.0")
 False
 ```
-2)Yes
+2) Yes
 ```
 print (5 == (3+2))
 True
 ```
-3) 
+3) 5 ways to get "True" as output:
 ```
 print (1 == 1.0 and not "1" == "1.0" and 5 == (3+2)
 True
@@ -117,7 +117,7 @@ True
 ```
 
 ### List exercises
-1)
+1) time stamp 19 minutes
 2)
 3)
 4) 
