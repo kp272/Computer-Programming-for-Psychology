@@ -58,7 +58,7 @@ K
 ```
 4) NA
 5) Changing the value of "letterX" did not change the value of the other variables. 
-6) Changing the value of "letter1" did not change the value of "letterX".
+6) Changing the value of "letter1" did not change the value of "letterX". "letterX" only got assigned what "letter1" was at the time of redefining "letterX = letter1".  Changing the value of "letter1" after this did not change the value of "letterX". This tells us that python variable assignment is not permanent ???
 ```
 print(letter1)
 K
@@ -80,9 +80,41 @@ z
 ```
 
 ### Boolean exercises
-1)
-2)
-3)
+1) 1 and 1.0 are equivalent. "1" and "1.0" are not equivalent. Because strings cannot be equivalent, but integers and floats can be. 
+```
+print (1 == 1.0)
+True
+```
+```
+print ("1" == "1.0")
+False
+```
+2)Yes
+```
+print (5 == (3+2))
+True
+```
+3) 
+```
+print (1 == 1.0 and not "1" == "1.0" and 5 == (3+2)
+True
+```
+```
+print (1 == 1.0 or "1" == "1.0" and 5 == (3+2)
+True
+```
+```
+print (1 == 1.0 or "1" == "1.0" or 5 == (3+2)
+True
+```
+```
+print (1 == 1.0 and not "1" == "1.0" or 5 == (3+2)
+True
+```
+```
+print (1 == 1.0 or "1" == "1.0" and not 5 == (3+2)
+True
+```
 
 ### List exercises
 1)
