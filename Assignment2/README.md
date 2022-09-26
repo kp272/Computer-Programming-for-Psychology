@@ -117,27 +117,59 @@ True
 ```
 
 ### List exercises
-1) 
-
+1) Yes, "oddlist" became a variable. 
 ```
-print (oddlist = [1, 3, 5, 7, 9])
+oddlist = [1, 3, 5, 7, 9]
 ```
-
-2)
-3)
-4) 
+2) 
+```
+oddlist[:]
+[1, 3, 5, 7, 9]
+```
+3) Python says that the list has 5 values. 
+```
+print(len(oddlist))
+5
+```
+4) Python says that "oddlist" is classified as a "list" variable. 
+```
+print(type(oddlist))
+<class 'list'>
+```
 5) 
-6)
+```
+intlist = (list(range(1,100)))
+```
+6) It listed all integers between 0 and 100. 
 
 ### Dictionary exercises
 1)
-2)
-3)
+```
+about_me = {'name' : 'Kasti', 'age' : 22.0, 'year of study' : 5, 'favorite foods' : ['Pasta', 'Noodles']}
+```
+2) The function "type" for "about_me" is classified as dicttionary
+```
+about_me
+    {'name': 'Kasti',
+    'age': 22.0,
+    'year of study': 5,
+    'favorite foods': ['Pasta', 'Noodles']}
+```
+```
+print(type(about_me))
+<class 'dict'>
+```
+3) In python, the length of the dictionary is how many things are in the dictionary. So, how many variable have been added. This does not include the values in each variable. 
 
 ### Array exercises
 1)
+
 2)
+
 3)
+
 4) 
+
 5) 
+
 6)
