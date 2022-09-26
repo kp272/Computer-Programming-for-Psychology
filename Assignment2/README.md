@@ -59,7 +59,7 @@ K
 ```
 Question 4) NA
 Question 5) Changing the value of "letterX" did not change the value of the other variables. 
-Question 6) Changing the value of "letter1" did not change the value of "letterX". "letterX" only got assigned what "letter1" was at the time of redefining "letterX = letter1".  Changing the value of "letter1" after this did not change the value of "letterX". This tells us that python variable assignment is not permanent ???
+Question 6) Changing the value of "letter1" did not change the value of "letterX". "letterX" only got assigned what "letter1" was at the time of redefining "letterX = letter1".  Changing the value of "letter1" after this did not change the value of "letterX". This tells us that python variable assignment is not permanent. 
 ```
 print(letter1)
 K
