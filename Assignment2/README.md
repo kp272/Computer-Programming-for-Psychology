@@ -161,6 +161,10 @@ print(type(about_me))
 <class 'dict'>
 ```
 3) In python, the length of the dictionary is how many things are in the dictionary. So, how many variable have been added. This does not include the values in each variable. 
+```
+print(len(about_me))
+4
+```
 
 ### Array exercises
 1)
