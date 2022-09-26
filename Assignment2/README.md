@@ -44,6 +44,7 @@ print(1 + 2 + (3 * (4 / 5)))
 
 # Variable exercises
 Question 1) See file [yourname.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/Assignment2/yourname.py)
+
 Question 2) Yes. The variables "letter1" to "letter5" show up, corresponding to their values, that are "K" to "I"
 <img width="723" alt="Screen Shot 2022-09-24 at 6 35 18 PM" src="https://user-images.githubusercontent.com/113375408/192123404-67985566-dd95-4bab-9cac-3c44f95e9304.png">
 
