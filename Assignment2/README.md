@@ -167,14 +167,37 @@ print(len(about_me))
 ```
 
 ### Array exercises
-1)
+1) Python changed everything to floats in the output of "mixnums"
+```
+import numpy as np
+mixnums = np.array([1,2.0,3,4.0,5,6.0])
+print(mixnums)
+    
+[1. 2. 3. 4. 5. 6.]
+```
+2) Python changed everything to strings in the output of "mixtypes"
+```
+mixtypes = np.array([1,2,3.0,4.0,'5','6.0'])
+print (mixtypes)
 
-2)
+['1' '2' '3.0' '4.0' '5' '6.0']
+```
+3) 
+```
+oddarray = np.arange(1,100,2)
+print(oddarray)
 
-3)
-
+[ 1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47
+ 49 51 53 55 57 59 61 63 65 67 69 71 73 75 77 79 81 83 85 87 89 91 93 95
+ 97 99]
+```
 4) 
+```
+logarray = np.logspace(1,5,16)
+print(logarray)
 
-5) 
-
-6)
+[1.00000000e+01 1.84784980e+01 3.41454887e+01 6.30957344e+01
+ 1.16591440e+02 2.15443469e+02 3.98107171e+02 7.35642254e+02
+ 1.35935639e+03 2.51188643e+03 4.64158883e+03 8.57695899e+03
+ 1.58489319e+04 2.92864456e+04 5.41169527e+04 1.00000000e+05]
+```
