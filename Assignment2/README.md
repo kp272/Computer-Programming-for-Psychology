@@ -150,10 +150,11 @@ about_me = {'name' : 'Kasti', 'age' : 22.0, 'year of study' : 5, 'favorite foods
 2) The function "type" for "about_me" is classified as dicttionary
 ```
 about_me
-    {'name': 'Kasti',
-    'age': 22.0,
-    'year of study': 5,
-    'favorite foods': ['Pasta', 'Noodles']}
+
+{'name': 'Kasti',
+'age': 22.0,
+'year of study': 5,
+'favorite foods': ['Pasta', 'Noodles']}
 ```
 ```
 print(type(about_me))
