@@ -117,7 +117,12 @@ True
 ```
 
 ### List exercises
-1) time stamp 19 minutes
+1) 
+
+```
+print (oddlist = [1, 3, 5, 7, 9])
+```
+
 2)
 3)
 4) 
