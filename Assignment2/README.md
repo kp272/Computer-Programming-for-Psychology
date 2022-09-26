@@ -1,10 +1,10 @@
-# This is my set of answers to Assignment 2:
+### This is my set of answers to Assignment 2:
 
-## Print exercises
+# Print exercises
 Question 1) See file [yourname.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/Assignment2/yourname.py)
 Question 2) No varriable showed up in the editor
 
-## Operation exercises
+# Operation exercises
 Question 1) Python outputs the same values for these
 Question 2) The modulo operator tells us what is left over (remainder), after we divide two numbers. 
 ```
@@ -42,7 +42,7 @@ print(1 + 2 + (3 * (4 / 5)))
 5.4
 ```
 
-## Variable exercises
+# Variable exercises
 Question 1) See file [yourname.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/Assignment2/yourname.py)
 Question 2) Yes. The variables "letter1" to "letter5" show up, corresponding to their values, that are "K" to "I"
 <img width="723" alt="Screen Shot 2022-09-24 at 6 35 18 PM" src="https://user-images.githubusercontent.com/113375408/192123404-67985566-dd95-4bab-9cac-3c44f95e9304.png">
@@ -79,7 +79,7 @@ print(letter1)
 z
 ```
 
-## Boolean exercises
+# Boolean exercises
 Question 1) 1 and 1.0 are equivalent. "1" and "1.0" are not equivalent. Because strings cannot be equivalent, but integers and floats can be. 
 ```
 print (1 == 1.0)
@@ -116,7 +116,7 @@ print (1 == 1.0 or "1" == "1.0" and not 5 == (3+2)
 True
 ```
 
-## List exercises
+# List exercises
 Question 1) Yes, "oddlist" became a variable. 
 ```
 oddlist = [1, 3, 5, 7, 9]
@@ -142,7 +142,7 @@ intlist = (list(range(1,100)))
 ```
 Question 6) It listed all integers between 0 and 100. 
 
-## Dictionary exercises
+# Dictionary exercises
 Question 1)
 ```
 about_me = {'name' : 'Kasti', 'age' : 22.0, 'year of study' : 5, 'favorite foods' : ['Pasta', 'Noodles']}
@@ -166,7 +166,7 @@ print(len(about_me))
 4
 ```
 
-## Array exercises
+# Array exercises
 Question 1) Python changed everything to floats in the output of "mixnums"
 ```
 import numpy as np
