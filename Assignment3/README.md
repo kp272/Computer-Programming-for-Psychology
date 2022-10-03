@@ -9,22 +9,33 @@ Question 1) Both didn't work because the operation that worked has strings, and 
 sub_code = "sub"
 subnr_int = 2
 subnr_str = "2"
-
+```
+```
 print(sub_code + subnr_str)
+        sub2
+```
+```
 print(sub_code + subnr_int)
 # code "print(sub_code + subnr_int)" didn't work
 ```
 Question 2) 
 ```
 print(sub_code + " " + subnr_str)
+        sub 2
+```
+```
 print(sub_code + " " + subnr_str*3) 
+        sub 222
+```
+```
 print((sub_code + subnr_str)*3)
-print((sub_code*3)+(subnr_str*3))
+        sub2sub2sub2
 
-    sub 2
-    sub 222
-    sub2sub2sub2
-    subsubsub222
+```
+```
+print((sub_code*3)+(subnr_str*3))
+        subsubsub222
+
 ```
 
 # List operations exercises
