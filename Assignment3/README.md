@@ -30,12 +30,10 @@ print(sub_code + " " + subnr_str*3)
 ```
 print((sub_code + subnr_str)*3)
         sub2sub2sub2
-
 ```
 ```
 print((sub_code*3)+(subnr_str*3))
         subsubsub222
-
 ```
 
 # List operations exercises
