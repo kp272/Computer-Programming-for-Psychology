@@ -16,10 +16,10 @@ print(sub_code + subnr_int)
 ```
 Question 2) 
 ```
-    print(sub_code + " " + subnr_str)
-    print(sub_code + " " + subnr_str*3) 
-    print((sub_code + subnr_str)*3)
-    print((sub_code*3)+(subnr_str*3))
+print(sub_code + " " + subnr_str)
+print(sub_code + " " + subnr_str*3) 
+print((sub_code + subnr_str)*3)
+print((sub_code*3)+(subnr_str*3))
 
     sub 2
     sub 222
