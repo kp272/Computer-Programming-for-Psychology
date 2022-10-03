@@ -127,13 +127,13 @@ print(list100[:10])
 ```
 Question 3) 
 ```
-print(list100[99::-2])
+print((list100[1::2])[::-1])
 ```
 Question 4) 
 ```
-print(list100[:-5:-1])
+print((list100[-4:])[::-1])
 ```
-Question 5) 
+Question 5) Yes, they are equal. 
 ```
-print(list100[39:44] == list(range(39,44)))
+print(list100[39:44] == [39, 40, 41, 42, 43])
 ```
