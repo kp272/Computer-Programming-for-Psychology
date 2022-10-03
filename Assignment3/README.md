@@ -70,3 +70,70 @@ print([strlist[0], strlist[0], strlist[1], strlist[1], strlist[2], strlist[2], s
 print([[strlist[0], strlist[0]], [strlist[1], strlist[1]], [strlist[2], strlist[2]], [strlist[3], strlist[3]]])
         [['do', 'do'], ['re', 're'], ['mi', 'mi'], ['fa', 'fa']]
 ```
+# Zipping exercises
+
+Question 1) 
+```
+first_item = []
+second_item = []
+images_faces_f = ["face1.png"] * 5 + ["face2.png"] * 5 + ["face3.png"] * 5 + ["face4.png"] * 5 + ["face5.png"] * 5
+images_houses_f = ["house1.png"] * 5 + ["house2.png"] * 5 + ["house3.png"] * 5 + ["house4.png"] * 5 + ["house5.png"] * 5
+first_item.extend(images_faces_f)
+first_item.extend(images_houses_f)
+first_item.extend(images_faces_f)
+first_item.extend(images_houses_f)
+images_faces_s = ["face1.png", "face2.png", "face3.png", "face4.png", "face5.png"] * 5
+images_houses_s = ["house1.png", "house2.png", "house3.png", "house4.png", "house5.png"] * 5
+second_item.extend(images_faces_s)
+second_item.extend(images_houses_s)
+second_item.extend(images_faces_s)
+second_item.extend(images_houses_s)
+cues = ['cue1'] * 50 + ['cue2'] * 50
+catimgs = list(zip(first_item, second_item, cues))
+np.random.shuffle(catimgs)
+```
+# Indexing exercises
+
+Question 1) 
+```
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+```
+Question 2)
+```
+print(colors[-2])
+```
+Question 3) 
+```
+print(colors[-2][2]
+print(colors[-2][3])
+        u
+        e
+```
+Question 4) 
+```
+colors[-1] = "indigo"
+colors.append("violet")
+print(colors)
+```
+# Slicing exercises
+
+Question 1) 
+```
+list100 = list(range(0, 101))
+```
+Question 2)
+```
+print(list100[:10])
+```
+Question 3) 
+```
+print(list100[99::-2])
+```
+Question 4) 
+```
+print(list100[:-5:-1])
+```
+Question 5) 
+```
+print(list100[39:44] == list(range(39,44)))
+```
