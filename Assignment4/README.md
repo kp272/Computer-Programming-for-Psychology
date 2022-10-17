@@ -1,3 +1,6 @@
+### This is my set of answers to Assignment 4
+
+See file [Assin4.py](https://github.com/kp272/Computer-Programming-for-Psychology/edit/main/Assignment4/Assignment4.py).
 
 # Conditional exercises
 ### Question 1) 
