@@ -5,6 +5,31 @@ See file [Assin4.py](https://github.com/kp272/Computer-Programming-for-Psycholog
 # Conditional exercises
 ### Question 1) 
 ```
+if response == 1 or response == 2:
+    print("OK")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+```
+
+### Question 2)
+```
+if response == 1 or response == 2:
+    if response == 1:
+        print("Correct!")
+    if response == 2:
+        print("Incorrect!")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+```
+
+### Question 3)
+
+Script responses from question 1:
+```
 response = 1
 if response == 1 or response == 2:
     print("OK")
@@ -43,9 +68,10 @@ else:
 # subject pressed the wrong key
 ```
 
-
-### Question 2)
-```if response == 1 or response == 2:
+Script responses from Question 2:
+```
+response = 1
+if response == 1 or response == 2:
     if response == 1:
         print("Correct!")
     if response == 2:
@@ -54,10 +80,55 @@ elif response == "NaN":
     print("subject did not respond") 
 else:
     print("subject pressed the wrong key")
-```
 
-### Question 3)
-responses 1 , 2, 'NaN' and ' ' were tested. The outputs were Correct!, Incorrect!, subject did not respond and subject pressed the wrong key.  
+# Output:
+# Correct!
+```
+```
+response = 2
+if response == 1 or response == 2:
+    if response == 1:
+        print("Correct!")
+    if response == 2:
+        print("Incorrect!")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+
+# Output:
+# Incorrect!
+```
+```
+response = 'NaN'
+if response == 1 or response == 2:
+    if response == 1:
+        print("Correct!")
+    if response == 2:
+        print("Incorrect!")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+
+# Output:
+# subject did not respond
+```
+```
+response = ' '
+if response == 1 or response == 2:
+    if response == 1:
+        print("Correct!")
+    if response == 2:
+        print("Incorrect!")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+
+# Output:
+# subject pressed the wrong key
+```
 
 # For loop exercises
 ### Question 1)
