@@ -135,6 +135,12 @@ else:
 ```myName = 'Kasti'
 for letter in myName:
     print(letter)
+# Output:
+# K
+# a
+# s
+# t
+# i
 ```
 
 ### Question 2)
@@ -145,6 +151,18 @@ for letter in myName:
     counter = counter + 1
     print(letter)
     print(counter)
+    
+# Output:
+# K
+# 0
+# a
+# 1
+# s
+# 2
+# t
+# 3
+# i
+# 4
 ```
 
 ### Question 3)
@@ -154,6 +172,22 @@ for name in names:
     print(name)
     for letter in name:
         print(letter)
+# Output:
+# Amy
+# A
+# m
+# y
+# Rory
+# R
+# o
+# r
+# y
+# River
+# R
+# i
+# v
+# e
+# r
 ```
 
 ### Question 4)
@@ -166,6 +200,34 @@ for name in names:
         letterCounter = letterCounter + 1
         print(letter)
         print(letterCounter)
+# Output:
+# Amy
+# A
+# 0
+# m
+# 1
+# y
+# 2
+# Rory
+# R
+# 0
+# o
+# 1
+# r
+# 2
+# y
+# 3
+# River
+# R
+# 0
+# i
+# 1
+# v
+# 2
+# e
+# 3
+# r
+# 4
 ```
 
 # While loop exercises
