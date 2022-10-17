@@ -5,7 +5,6 @@ See file [Assin4.py](https://github.com/kp272/Computer-Programming-for-Psycholog
 # Conditional exercises
 ### Question 1) 
 ```
-response = 1
 if response == 1 or response == 2:
     print("OK")
 elif response == "NaN":
@@ -13,6 +12,42 @@ elif response == "NaN":
 else:
     print("subject pressed the wrong key")
 ```
+```
+response = 1
+if response == 1 or response == 2:
+    print("OK")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+    
+    OK
+```
+
+```
+response = 'NaN'
+if response == 1 or response == 2:
+    print("OK")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+    
+    subject did not respond
+```
+
+```
+response = ''
+if response == 1 or response == 2:
+    print("OK")
+elif response == "NaN":
+    print("subject did not respond") 
+else:
+    print("subject pressed the wrong key")
+    
+    subject pressed the wrong key
+```
+
 
 ### Question 2)
 ```if response == 1 or response == 2:
