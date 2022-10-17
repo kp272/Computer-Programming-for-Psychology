@@ -6,8 +6,8 @@ Created on Mon Oct 17 09:05:33 2022
 @author: kasti
 """
 
-# import random
-# import numpy as np 
+import random
+import numpy as np 
 
 
 ### Conditional exercises
@@ -64,3 +64,36 @@ for name in names:
         letterCounter = letterCounter + 1
         print(letter)
         print(letterCounter)
+        
+### While loop exercises
+# Question 1)
+iteration = 0
+while iteration < 20:
+    if iteration < 10:
+        print('%i, image1.png' %iteration)
+    elif iteration < 20:
+        print('%i, image2.png' %iteration)
+    iteration = iteration + 1
+    
+# Question 2)
+response = ''
+looping = True 
+while looping:
+    response = random.randint(0,10)
+    print(response)
+    print('This is an image')
+    
+    if response == 1 or response == 2:
+        looping = False
+    
+# Question 3)
+response = ''
+looping = True 
+failsafe = 0
+while looping:
+    response = random.randint(0,10)
+    print(response)
+    print('This is an image')
+    failsafe = failsafe + 1
+    if response == 1 or response == 2 or failsafe == 5:
+        looping = False
