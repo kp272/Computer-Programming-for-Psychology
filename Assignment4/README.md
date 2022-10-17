@@ -4,6 +4,7 @@ See file [Assin4.py](https://github.com/kp272/Computer-Programming-for-Psycholog
 
 # Conditional exercises
 ### Question 1) 
+```
 response = 1
 if response == 1 or response == 2:
     print("OK")
@@ -11,9 +12,10 @@ elif response == "NaN":
     print("subject did not respond") 
 else:
     print("subject pressed the wrong key")
-    
+```
+
 ### Question 2)
-if response == 1 or response == 2:
+```if response == 1 or response == 2:
     if response == 1:
         print("Correct!")
     if response == 2:
@@ -22,32 +24,39 @@ elif response == "NaN":
     print("subject did not respond") 
 else:
     print("subject pressed the wrong key")
-    
+```
+
 ### Question 3)
 responses 1 , 2, 'NaN' and ' ' were tested. The outputs were Correct!, Incorrect!, subject did not respond and subject pressed the wrong key.  
 
 # For loop exercises
 ### Question 1)
-myName = 'Kasti'
+```myName = 'Kasti'
 for letter in myName:
     print(letter)
-    
+```
+
 ### Question 2)
+```
 myName = 'Kasti'
 counter = -1
 for letter in myName:
     counter = counter + 1
     print(letter)
     print(counter)
-    
+```
+
 ### Question 3)
+```
 names = ["Amy", "Rory", "River"]
 for name in names:
     print(name)
     for letter in name:
         print(letter)
-        
+```
+
 ### Question 4)
+```
 names = ["Amy", "Rory", "River"]
 for name in names:
     print(name)
@@ -56,18 +65,21 @@ for name in names:
         letterCounter = letterCounter + 1
         print(letter)
         print(letterCounter)
-        
+```
+
 # While loop exercises
 ### Question 1)
-iteration = 0
+```iteration = 0
 while iteration < 20:
     if iteration < 10:
         print('%i, image1.png' %iteration)
     elif iteration < 20:
         print('%i, image2.png' %iteration)
     iteration = iteration + 1
-    
+```
+
 ### Question 2)
+```
 response = ''
 looping = True 
 while looping:
@@ -77,8 +89,10 @@ while looping:
     
     if response == 1 or response == 2:
         looping = False
-    
+```
+
 ### Question 3)
+```
 response = ''
 looping = True 
 failsafe = 0
@@ -89,3 +103,4 @@ while looping:
     failsafe = failsafe + 1
     if response == 1 or response == 2 or failsafe == 5:
         looping = False
+```
