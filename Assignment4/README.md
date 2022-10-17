@@ -135,6 +135,7 @@ else:
 ```myName = 'Kasti'
 for letter in myName:
     print(letter)
+    
 # Output:
 # K
 # a
@@ -172,6 +173,7 @@ for name in names:
     print(name)
     for letter in name:
         print(letter)
+        
 # Output:
 # Amy
 # A
@@ -200,6 +202,7 @@ for name in names:
         letterCounter = letterCounter + 1
         print(letter)
         print(letterCounter)
+        
 # Output:
 # Amy
 # A
@@ -239,6 +242,28 @@ while iteration < 20:
     elif iteration < 20:
         print('%i, image2.png' %iteration)
     iteration = iteration + 1
+    
+# Output:
+# 0, image1.png
+# 1, image1.png
+# 2, image1.png
+# 3, image1.png
+# 4, image1.png
+# 5, image1.png
+# 6, image1.png
+# 7, image1.png
+# 8, image1.png
+# 9, image1.png
+# 10, image2.png
+# 11, image2.png
+# 12, image2.png
+# 13, image2.png
+# 14, image2.png
+# 15, image2.png
+# 16, image2.png
+# 17, image2.png
+# 18, image2.png
+# 19, image2.png
 ```
 
 ### Question 2)
@@ -252,6 +277,40 @@ while looping:
     
     if response == 1 or response == 2:
         looping = False
+        
+# Output 1:
+# 7
+# This is an image
+# 10
+# This is an image
+# 0
+# This is an image
+# 8
+# This is an image
+# 8
+# This is an image
+# 9
+# This is an image
+# 2
+# This is an image
+
+# Output 2:
+# 6
+# This is an image
+# 9
+# This is an image
+# 3
+# This is an image
+# 10
+# This is an image
+# 9
+# This is an image
+# 5
+# This is an image
+# 10
+# This is an image
+# 1
+# This is an image
 ```
 
 ### Question 3)
@@ -266,4 +325,39 @@ while looping:
     failsafe = failsafe + 1
     if response == 1 or response == 2 or failsafe == 5:
         looping = False
-```
+
+# Output 1:
+# 1
+# This is an image
+
+# Output 2:
+# 7
+# This is an image
+# 1
+# This is an image
+
+# Output 3:
+# 3
+# This is an image
+# 5
+# This is an image
+# 2
+
+# Output 4:
+# 1
+# This is an image
+
+# Output 5:
+# 2
+# This is an image
+
+# Output 6:
+# 10
+# This is an image
+# 4
+# This is an image
+# 5
+# This is an image
+# 3
+# This is an image
+# 8
