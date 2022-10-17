@@ -1,6 +1,6 @@
 
-### Conditional exercises
-# Question 1) 
+# Conditional exercises
+### Question 1) 
 response = 1
 if response == 1 or response == 2:
     print("OK")
@@ -9,7 +9,7 @@ elif response == "NaN":
 else:
     print("subject pressed the wrong key")
     
-# Question 2)
+### Question 2)
 if response == 1 or response == 2:
     if response == 1:
         print("Correct!")
@@ -20,16 +20,16 @@ elif response == "NaN":
 else:
     print("subject pressed the wrong key")
     
-# Question 3)
-# responses 1 , 2, 'NaN' and ' ' were tested. The outputs were Correct!, Incorrect!, subject did not respond and subject pressed the wrong key.  
+### Question 3)
+responses 1 , 2, 'NaN' and ' ' were tested. The outputs were Correct!, Incorrect!, subject did not respond and subject pressed the wrong key.  
 
-### For loop exercises
-# Question 1)
+# For loop exercises
+### Question 1)
 myName = 'Kasti'
 for letter in myName:
     print(letter)
     
-# Question 2)
+### Question 2)
 myName = 'Kasti'
 counter = -1
 for letter in myName:
@@ -37,14 +37,14 @@ for letter in myName:
     print(letter)
     print(counter)
     
-# Question 3)
+### Question 3)
 names = ["Amy", "Rory", "River"]
 for name in names:
     print(name)
     for letter in name:
         print(letter)
         
-# Question 4)
+### Question 4)
 names = ["Amy", "Rory", "River"]
 for name in names:
     print(name)
@@ -54,8 +54,8 @@ for name in names:
         print(letter)
         print(letterCounter)
         
-### While loop exercises
-# Question 1)
+# While loop exercises
+### Question 1)
 iteration = 0
 while iteration < 20:
     if iteration < 10:
@@ -64,7 +64,7 @@ while iteration < 20:
         print('%i, image2.png' %iteration)
     iteration = iteration + 1
     
-# Question 2)
+### Question 2)
 response = ''
 looping = True 
 while looping:
@@ -75,7 +75,7 @@ while looping:
     if response == 1 or response == 2:
         looping = False
     
-# Question 3)
+### Question 3)
 response = ''
 looping = True 
 failsafe = 0
