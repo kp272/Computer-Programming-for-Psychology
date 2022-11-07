@@ -43,6 +43,8 @@ startMessage = "Welcome to the experiment. Press any key to begin"
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
 #-create counterbalanced list of all conditions *
+catimgs = list(zip(objects, pics))
+print(catimgs)
 
 #=====================
 #PREPARE DATA COLLECTION LISTS
