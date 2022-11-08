@@ -1,7 +1,7 @@
 #=====================
 #IMPORT MODULES
 #=====================
-#-import numpy and/or numpy functions *
+#-import numpy and/or numpy functions
 import numpy as np
 
 #-import psychopy functions
@@ -31,8 +31,10 @@ image_dir = os.path.join(main_dir,'images')
 #-check that these directories exist
 if not os.path.isdir(image_dir):
     raise Exception("Could not find the path!")
+
 # if not os.path.isdir(data_dir):
     # raise Exception("Could not find the path!")
+
 
 #=====================
 #COLLECT PARTICIPANT INFO
@@ -42,15 +44,18 @@ if not os.path.isdir(image_dir):
 #get date and time
 #-create a unique filename for the data
 
+
 #=====================
 #STIMULUS AND TRIAL SETTINGS
 #=====================
 #-number of trials and blocks *
 nTrials = 10
 nBlocks = 2
+
 #-stimulus names (and stimulus extensions, if images) *
 cats = ['faces'] * 10
 imgs = ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'im6.png', 'im7.png', 'im8.png', 'im9.png', 'im10.png']
+
 #-stimulus properties like size, orientation, location, duration *
 stimSize = [200,200];
 stimDur = 1;
@@ -60,12 +65,13 @@ stimLoc = [50,150]
 #-start message text *
 startMessage = "Welcome to the experiment. Press any key to begin"
 
+
 #=====================
 #PREPARE CONDITION LISTS
 #=====================
 # Automate the creation of the list of images ("pics"). Do not write them all out manually.
-                        # pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
-                        # 'face' + str(number) + .'jpg'
+           # pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+           # 'face' + str(number) + .'jpg'
 n = 0
 pics = []
 while n < 10:
@@ -73,14 +79,31 @@ while n < 10:
     pics.append('face' + f'{n:02}' + '.jpg') 
 print(pics)
 
-#-check if files to be used during the experiment (e.g., images) exist
 ims_in_dir = sorted(os.listdir(image_dir))
-if not pics == ims_in_dir:
-    raise Exception("The image lists do not match up!")
+print(ims_in_dir)
+
+#-check if files to be used during the experiment (e.g., images) exist
+    # 1) One way to do this is to use the code:
+            # if not pics == ims_in_dir:
+            # raise Exception("The image lists do not match up!")
+    # 2) Another way to do this:
+        # Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. 
+        # Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. 
+        # Raise an exception if an image does not exist.
+
+count = 0
+for pic in pics:
+    if pics == ims_in_dir:
+        count = count + 1 
+        pic = ims_in_dir
+        print ('cat%i.jpg was found!' %count)
+    else:
+        raise Exception("The image lists do not match up!")
 
 #-create counterbalanced list of all conditions *
 catimgs = list(zip(cats, imgs))
 print(catimgs)
+
 
 #=====================
 #PREPARE DATA COLLECTION LISTS
@@ -112,6 +135,7 @@ stimOrd_iden = np.zeros(20);
 stimOrd_prop = [];
 stimOrd_prop = np.zeros(20);
 
+
 #=====================
 #CREATION OF WINDOW AND STIMULI
 #=====================
@@ -123,11 +147,13 @@ stimOrd_prop = np.zeros(20);
 #-create response time clock
 #-make mouse pointer invisible
 
+
 #=====================
 #START EXPERIMENT
 #=====================
 #-present start message text
 #-allow participant to begin experiment with button press
+
 
 #=====================
 #BLOCK SEQUENCE
@@ -140,6 +166,7 @@ for thisBlock in range(nBlocks):
     np.random.shuffle(catimgs)
     #-reset response time clock here
     
+    
     #=====================
     #TRIAL SEQUENCE
     #=====================    
@@ -148,6 +175,7 @@ for thisBlock in range(nBlocks):
         print('Trial' + str(thisTrial+1))
         #-set stimuli and stimulus properties for the current trial
         #-empty keypresses
+        
         
         #=====================
         #START TRIAL
@@ -161,6 +189,7 @@ for thisBlock in range(nBlocks):
         #-collect subject response for that trial
         #-collect subject response time for that trial
         #-collect accuracy for that trial
+        
         
 #======================
 # END OF EXPERIMENT
