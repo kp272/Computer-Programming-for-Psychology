@@ -136,7 +136,37 @@ for thisBlock in range(nBlocks):
 #-close window
 #-quit experiment
 ```
-# Import exercises
+# Import exercises 
 
+
+## Output for Import exercises
+```
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
+2022-11-07 21:42:04.398 python[2536:84221] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignment5
+Welcome to block1
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+Welcome to block2
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+################# Experiment ended with exit code 0 [pid:2536] #################
+```
 
 # Directory exercises
