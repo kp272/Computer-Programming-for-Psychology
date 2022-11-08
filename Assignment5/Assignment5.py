@@ -3,9 +3,25 @@
 #=====================
 #-import numpy and/or numpy functions *
 import numpy as np
+
 #-import psychopy functions
+from psychopy import core, gui, visual, event
+
 #-import file save functions
+import json
+
 #-(import other functions as necessary: os...)
+import os
+print(os.getcwd())
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir,'images')
+data_dir = os.path.join(main_dir,'data')
+
+if not os.path.isdir(image_dir):
+    raise Exception("Could not find the path!")
+
+# if not os.path.isdir(data_dir):
+    # raise Exception("Could not find the path!")
 
 #=====================
 #PATH SETTINGS
@@ -30,8 +46,8 @@ import numpy as np
 nTrials = 10
 nBlocks = 2
 #-stimulus names (and stimulus extensions, if images) *
-objects = ['face'] * 10
-pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+cats = ['faces'] * 10
+imgs = ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'im6.png', 'im7.png', 'im8.png', 'im9.png', 'im10.png']
 #-stimulus properties like size, orientation, location, duration *
 stimSize = [200,200]
 stimDur = 1
@@ -42,8 +58,13 @@ startMessage = "Welcome to the experiment. Press any key to begin"
 #PREPARE CONDITION LISTS
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
+pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+ims_in_dir = sorted(os.listdir(image_dir))
+if not pics == ims_in_dir:
+    raise Exception("The image lists do not match up!")
+
 #-create counterbalanced list of all conditions *
-catimgs = list(zip(objects, pics))
+catimgs = list(zip(cats, imgs))
     #print(catimgs)
 
 #=====================
@@ -132,4 +153,3 @@ for thisBlock in range(nBlocks):
 #-write data to a file
 #-close window
 #-quit experiment
-
