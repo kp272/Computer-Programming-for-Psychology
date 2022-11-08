@@ -1,3 +1,5 @@
+### Experiment structure exercises
+
 #=====================
 #IMPORT MODULES
 #=====================
@@ -44,20 +46,37 @@ startMessage = "Welcome to the experiment. Press any key to begin"
 #-check if files to be used during the experiment (e.g., images) exist
 #-create counterbalanced list of all conditions *
 catimgs = list(zip(objects, pics))
-print(catimgs)
+    #print(catimgs)
 
 #=====================
 #PREPARE DATA COLLECTION LISTS
 #=====================
 #-create an empty list for correct responses (e.g., "on this trial, a response of X is 
     #correct") *
+corrResp = [];
+corrResp = np.zeros(20);
+
 #-create an empty list for participant responses (e.g., "on this trial, response was a 
     #X") *
+partResp = [];
+partResp = np.zeros(20);
+
 #-create an empty list for response accuracy collection (e.g., "was participant 
     #correct?") *
+respAccu = [];
+respAccu = np.zeros(20);
+
 #-create an empty list for response time collection *
+respTime = [];
+respTime = np.zeros(20);
+
 #-create an empty list for recording the order of stimulus identities *
+stimOrd_iden = [];
+stimOrd_iden = np.zeros(20);
+
 #-create an empty list for recording the order of stimulus properties *
+stimOrd_prop = [];
+stimOrd_prop = np.zeros(20);
 
 #=====================
 #CREATION OF WINDOW AND STIMULI
@@ -80,14 +99,17 @@ print(catimgs)
 #BLOCK SEQUENCE
 #=====================
 #-for loop for nBlocks *
+for thisBlock in range(nBlocks):
     #-present block start message
     #-randomize order of trials here *
+    np.random.shuffle(catimgs)
     #-reset response time clock here
     
     #=====================
     #TRIAL SEQUENCE
     #=====================    
     #-for loop for nTrials *
+    for thisTrial in range(nTrials):
         #-set stimuli and stimulus properties for the current trial
         #-empty keypresses
         
