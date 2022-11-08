@@ -136,6 +136,34 @@ for thisBlock in range(nBlocks):
 #-close window
 #-quit experiment
 ```
+## Output for Experiment structure exercises
+```
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
+Welcome to block1
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+Welcome to block2
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+################# Experiment ended with exit code 0 [pid:2641] #################
+```
+
 # Import exercises 
 
 
