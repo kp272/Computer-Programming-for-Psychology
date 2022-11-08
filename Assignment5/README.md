@@ -60,14 +60,9 @@ startMessage = "Welcome to the experiment. Press any key to begin"
 #PREPARE CONDITION LISTS
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
-pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
-ims_in_dir = sorted(os.listdir(image_dir))
-if not pics == ims_in_dir:
-    raise Exception("The image lists do not match up!")
-
 #-create counterbalanced list of all conditions *
 catimgs = list(zip(cats, imgs))
-    #print(catimgs)
+print(catimgs)
 
 
 #=====================
@@ -160,6 +155,7 @@ for thisBlock in range(nBlocks):
 ## Output after Experiment structure exercises
 ```
 ###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
 Welcome to block1
 Trial1
 Trial2
@@ -182,7 +178,7 @@ Trial7
 Trial8
 Trial9
 Trial10
-################# Experiment ended with exit code 0 [pid:2641] #################
+################# Experiment ended with exit code 0 [pid:3799] #################
 ```
 
 # Import exercises 
