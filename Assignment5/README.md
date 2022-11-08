@@ -352,5 +352,84 @@ Trial10
 ```
 2. Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. Raise an exception if an image does not exist.
 ```
+#=====================
+#PREPARE CONDITION LISTS
+#=====================
+# Automate the creation of the list of images ("pics"). Do not write them all out manually.
+           # pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+           # 'face' + str(number) + .'jpg'
+n = 0
+pics = []
+while n < 10:
+    n = n + 1
+    pics.append('face' + f'{n:02}' + '.jpg') 
+print(pics)
 
+ims_in_dir = sorted(os.listdir(image_dir))
+print(ims_in_dir)
+
+#-check if files to be used during the experiment (e.g., images) exist
+    # 1) One way to do this is to use the code:
+            # if not pics == ims_in_dir:
+            # raise Exception("The image lists do not match up!")
+    # 2) Another way to do this:
+        # Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. 
+        # Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. 
+        # Raise an exception if an image does not exist.
+
+count = 0
+for pic in pics:
+    if pics == ims_in_dir:
+        count = count + 1 
+        pic = ims_in_dir
+        print ('cat%i.jpg was found!' %count)
+    else:
+        raise Exception("The image lists do not match up!")
+
+#-create counterbalanced list of all conditions *
+catimgs = list(zip(cats, imgs))
+print(catimgs)
+```
+## Output after Directory exercises Question #2
+```
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
+2022-11-08 00:41:14.223 python[4454:192201] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignment5
+/Users/kasti/Desktop/PSYCH 403/Assignment5
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+cat1.jpg was found!
+cat2.jpg was found!
+cat3.jpg was found!
+cat4.jpg was found!
+cat5.jpg was found!
+cat6.jpg was found!
+cat7.jpg was found!
+cat8.jpg was found!
+cat9.jpg was found!
+cat10.jpg was found!
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
+Welcome to block1
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+Welcome to block2
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+################# Experiment ended with exit code 0 [pid:4454] #################
 ```
