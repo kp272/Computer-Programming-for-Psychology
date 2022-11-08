@@ -12,24 +12,27 @@ import json
 
 #-(import other functions as necessary: os...)
 import os
-print(os.getcwd())
-main_dir = os.getcwd()
-image_dir = os.path.join(main_dir,'images')
-data_dir = os.path.join(main_dir,'data')
 
-if not os.path.isdir(image_dir):
-    raise Exception("Could not find the path!")
-
-# if not os.path.isdir(data_dir):
-    # raise Exception("Could not find the path!")
 
 #=====================
 #PATH SETTINGS
 #=====================
 #-define the main directory where you will keep all of your experiment files
+print(os.getcwd())
+main_dir = os.getcwd()
+print(main_dir)
+
 #-define the directory where you will save your data
+data_dir = os.path.join(main_dir,'data')
+
 #-if you will be presenting images, define the image directory
+image_dir = os.path.join(main_dir,'images')
+
 #-check that these directories exist
+if not os.path.isdir(image_dir):
+    raise Exception("Could not find the path!")
+# if not os.path.isdir(data_dir):
+    # raise Exception("Could not find the path!")
 
 #=====================
 #COLLECT PARTICIPANT INFO
@@ -49,23 +52,35 @@ nBlocks = 2
 cats = ['faces'] * 10
 imgs = ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'im6.png', 'im7.png', 'im8.png', 'im9.png', 'im10.png']
 #-stimulus properties like size, orientation, location, duration *
-stimSize = [200,200]
-stimDur = 1
+stimSize = [200,200];
+stimDur = 1;
+stimOri = [10];
+stimLoc = [50,150]
+
 #-start message text *
 startMessage = "Welcome to the experiment. Press any key to begin"
 
 #=====================
 #PREPARE CONDITION LISTS
 #=====================
+# Automate the creation of the list of images ("pics"). Do not write them all out manually.
+                        # pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+                        # 'face' + str(number) + .'jpg'
+n = 0
+pics = []
+while n < 10:
+    n = n + 1
+    pics.append('face' + f'{n:02}' + '.jpg') 
+print(pics)
+
 #-check if files to be used during the experiment (e.g., images) exist
-pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
 ims_in_dir = sorted(os.listdir(image_dir))
 if not pics == ims_in_dir:
     raise Exception("The image lists do not match up!")
 
 #-create counterbalanced list of all conditions *
 catimgs = list(zip(cats, imgs))
-    #print(catimgs)
+print(catimgs)
 
 #=====================
 #PREPARE DATA COLLECTION LISTS
