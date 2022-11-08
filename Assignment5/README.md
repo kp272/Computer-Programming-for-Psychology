@@ -212,8 +212,8 @@ if not os.path.isdir(image_dir):
 ## Output after Import exercises
 ```
 ###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
-2022-11-07 21:42:04.398 python[2536:84221] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
-/Users/kasti/Desktop/PSYCH 403/Assignment5
+2022-11-07 23:33:53.106 python[3850:156323] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
 Welcome to block1
 Trial1
 Trial2
@@ -236,7 +236,7 @@ Trial7
 Trial8
 Trial9
 Trial10
-################# Experiment ended with exit code 0 [pid:2536] #################
+################# Experiment ended with exit code 0 [pid:3850] #################
 ```
 
 # Directory exercises
