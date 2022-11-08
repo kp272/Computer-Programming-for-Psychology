@@ -10,9 +10,12 @@ On the lines denoted with an asterix *, write in the correct python code:
 #=====================
 #-import numpy and/or numpy functions *
 import numpy as np
+
 #-import psychopy functions
 #-import file save functions
 #-(import other functions as necessary: os...)
+
+
 
 #=====================
 #PATH SETTINGS
@@ -22,6 +25,7 @@ import numpy as np
 #-if you will be presenting images, define the image directory
 #-check that these directories exist
 
+
 #=====================
 #COLLECT PARTICIPANT INFO
 #=====================
@@ -30,28 +34,37 @@ import numpy as np
 #get date and time
 #-create a unique filename for the data
 
+
 #=====================
 #STIMULUS AND TRIAL SETTINGS
 #=====================
 #-number of trials and blocks *
 nTrials = 10
 nBlocks = 2
+
 #-stimulus names (and stimulus extensions, if images) *
-objects = ['face'] * 10
-pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+cats = ['faces'] * 10
+imgs = ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'im6.png', 'im7.png', 'im8.png', 'im9.png', 'im10.png']
+
 #-stimulus properties like size, orientation, location, duration *
-stimSize = [200,200]
-stimDur = 1
+stimSize = [200,200];
+stimDur = 1;
+stimOri = [10];
+stimLoc = [50,150]
+
 #-start message text *
 startMessage = "Welcome to the experiment. Press any key to begin"
+
 
 #=====================
 #PREPARE CONDITION LISTS
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
+
 #-create counterbalanced list of all conditions *
-catimgs = list(zip(objects, pics))
+catimgs = list(zip(cats, imgs))
     #print(catimgs)
+
 
 #=====================
 #PREPARE DATA COLLECTION LISTS
@@ -218,12 +231,17 @@ if not os.path.isdir(image_dir):
 #-number of trials and blocks *
 nTrials = 10
 nBlocks = 2
+
 #-stimulus names (and stimulus extensions, if images) *
 cats = ['faces'] * 10
 imgs = ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'im6.png', 'im7.png', 'im8.png', 'im9.png', 'im10.png']
+
 #-stimulus properties like size, orientation, location, duration *
-stimSize = [200,200]
-stimDur = 1
+stimSize = [200,200];
+stimDur = 1;
+stimOri = [10];
+stimLoc = [50,150]
+
 #-start message text *
 startMessage = "Welcome to the experiment. Press any key to begin"
 
