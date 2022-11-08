@@ -259,12 +259,39 @@ image_dir = os.path.join(main_dir,'images')
 #-check that these directories exist
 if not os.path.isdir(image_dir):
     raise Exception("Could not find the path!")
-if not os.path.isdir(data_dir):
-    raise Exception("Could not find the path!")
+# if not os.path.isdir(data_dir):
+    # raise Exception("Could not find the path!")
 ```
 ## Output after Directory exercises Question #3
 ```
-
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
+2022-11-07 23:35:57.771 python[3877:157587] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignment5
+/Users/kasti/Desktop/PSYCH 403/Assignment5
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
+Welcome to block1
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+Welcome to block2
+Trial1
+Trial2
+Trial3
+Trial4
+Trial5
+Trial6
+Trial7
+Trial8
+Trial9
+Trial10
+################# Experiment ended with exit code 0 [pid:3877] #################
 ```
 1. Automate the creation of the list of images ("pics"). Do not write them all out manually.
 ```
