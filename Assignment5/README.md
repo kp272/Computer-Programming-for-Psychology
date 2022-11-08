@@ -318,10 +318,10 @@ catimgs = list(zip(cats, imgs))
 print(catimgs)
 
 ```
-## Output after Directory exercises part 1
+## Output after Directory exercises Question #1
 ```
 ###### Running: /Users/kasti/Desktop/PSYCH 403/Assignment5/Assignment5.py ######
-2022-11-07 22:59:20.002 python[3549:136371] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+2022-11-07 23:37:28.071 python[3897:158390] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
 /Users/kasti/Desktop/PSYCH 403/Assignment5
 /Users/kasti/Desktop/PSYCH 403/Assignment5
 ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
@@ -348,7 +348,7 @@ Trial7
 Trial8
 Trial9
 Trial10
-################# Experiment ended with exit code 0 [pid:3549] #################
+################# Experiment ended with exit code 0 [pid:3897] #################
 ```
 2. Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. Raise an exception if an image does not exist.
 ```
