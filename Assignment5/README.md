@@ -358,3 +358,6 @@ Trial10
 ```
 
 # Directory exercises
+1. Automate the creation of the list of images ("pics"). Do not write them all out manually.
+2. Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. Raise an exception if an image does not exist.
+3. Fill in the following sections of the experiment structure:
