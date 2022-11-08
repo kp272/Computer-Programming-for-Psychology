@@ -1,5 +1,9 @@
 # Experiment structure exercises
 
+We want to find out how long it takes people to see faces in common objects. We will present 10 images, one image per trial, in a randomized order. Each image will appear for 1 second in the center of the screen, at a size of 200x200 pixels. Each trial will start with a 1-second fixation cross, and end with a "wait for next image" text. There will be 2 blocks of trials, with 10 trials each.
+
+On the lines denoted with an asterix *, write in the correct python code:
+
 ```
 #=====================
 #IMPORT MODULES
@@ -165,6 +169,7 @@ Trial10
 ```
 
 # Import exercises 
+1. Fill in the "Import Modules" section of the experiment structure:
 ```
 #=====================
 #IMPORT MODULES
