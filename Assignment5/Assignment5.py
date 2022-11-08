@@ -1,4 +1,3 @@
-### Experiment structure exercises
 #=====================
 #IMPORT MODULES
 #=====================
@@ -133,4 +132,4 @@ for thisBlock in range(nBlocks):
 #-write data to a file
 #-close window
 #-quit experiment
-#-2:25:17
+
