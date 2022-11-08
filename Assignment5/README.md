@@ -60,6 +60,10 @@ startMessage = "Welcome to the experiment. Press any key to begin"
 #PREPARE CONDITION LISTS
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
+pics = ['face01.jpg','face02.jpg','face03.jpg','face04.jpg','face05.jpg','face06.jpg','face07.jpg','face08.jpg','face09.jpg','face10.jpg']
+ims_in_dir = sorted(os.listdir(image_dir))
+if not pics == ims_in_dir:
+    raise Exception("The image lists do not match up!")
 
 #-create counterbalanced list of all conditions *
 catimgs = list(zip(cats, imgs))
