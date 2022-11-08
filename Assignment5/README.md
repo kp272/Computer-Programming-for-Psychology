@@ -360,19 +360,21 @@ Trial10
 # Directory exercises
 1. Automate the creation of the list of images ("pics"). Do not write them all out manually.
 ```
-n = 0
-pics = []
-while n < 10:
-    n = n + 1
-    pics.append('face' + f'{n:02}' + '.jpg') 
-print(pics)
 
-
-for pic in pics:
-    if pic == image_dir:
-        print("%p was found!" %pic)
-    else:
-        raise Exception("The image lists do not match up!")
 ```
 2. Automate the task of finding out whether each image (as listed in "pics") exists in the "images" directory. Use a for loop and if statements to print "cat1.jpg was found!", "cat2.jpg was found!"... etc. Raise an exception if an image does not exist.
 3. Fill in the following sections of the experiment structure:
+```
+#=====================
+#PATH SETTINGS
+#=====================
+#-define the main directory where you will keep all of your experiment files
+#-define the directory where you will save your data
+#-if you will be presenting images, define the image directory
+#-check that these directories exist
+
+#=====================
+#PREPARE CONDITION LISTS
+#=====================
+#-check if files to be used during the experiment (e.g., images) exist
+```
