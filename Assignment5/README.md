@@ -1,5 +1,4 @@
 # Experiment structure exercises
-
 #=====================
 #IMPORT MODULES
 #=====================
@@ -100,6 +99,7 @@ stimOrd_prop = np.zeros(20);
 #=====================
 #-for loop for nBlocks *
 for thisBlock in range(nBlocks):
+    print('Welcome to block' + str(thisBlock+1))
     #-present block start message
     #-randomize order of trials here *
     np.random.shuffle(catimgs)
@@ -110,6 +110,7 @@ for thisBlock in range(nBlocks):
     #=====================    
     #-for loop for nTrials *
     for thisTrial in range(nTrials):
+        print('Trial' + str(thisTrial+1))
         #-set stimuli and stimulus properties for the current trial
         #-empty keypresses
         
@@ -132,4 +133,4 @@ for thisBlock in range(nBlocks):
 #-write data to a file
 #-close window
 #-quit experiment
-
+#-2:25:17
