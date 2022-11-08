@@ -136,4 +136,7 @@ for thisBlock in range(nBlocks):
 #-close window
 #-quit experiment
 ```
-#-2:25:17
+# Import exercises
+
+
+# Directory exercises
