@@ -3,23 +3,101 @@
 ### Use the PsychoPy help page on guis to customize your "exp_info" dialog box: psychopy.gui
 
 1. Edit the dictionary "exp_info" so you have a variable called "session", with "1" preset as the session number.
+```
+exp_info = {    'subject_nr':0, 
+                'age':0, 
+                'handedness':('right','left','ambi'), 
+                'gender':('male', 'female', 'other', 'prefer not to say'), 
+                'session': 1}                   # I also noticed that using "[1]" instead of "1" sets it up so that it doesn't allow the subject to 
+                                                # change the session number.
+```
 2. Edit the "gender" variable in "exp_info" so the subject can write in whatever they want into an empty box, instead of the drop-down list
+```
+exp_info = {    'subject_nr':0, 
+                'age':0, 
+                'handedness':('right','left','ambi'), 
+                'gender':(), 
+                'session': 1}
+```
 
 ### Using DlgFromDict:
 
 1. Customize my_dlg so that you have a title for your dialog box: "subject info".
+```
+my_dlg = gui.DlgFromDict(dictionary=exp_info, title = "subject info")
+```
 2. Set the variable "session" as fixed. What happens?
+Answer 2. This creates the dialog box so that the subject doesn't have the choice to change the "session" that is set as "1". 
+```
+my_dlg = gui.DlgFromDict(dictionary=exp_info, title = "subject info", fixed = ['session'])
+```
 3. Set the order of the variables as session, subject_nr, age, gender, handedness.
+```
+my_dlg = gui.DlgFromDict(dictionary=exp_info, title = "subject info", fixed = ['session'], order = ['session', 'subject_nr', 'age', 'gender', 'handedness')
+```
 4. Once you have done all of the above, don't show "my_dlg" right away. Tell your experiment to print "All variables have been created! Now ready to show the dialog box!". Then, show the dialog box.
+```
+#=====================
+#COLLECT PARTICIPANT INFO
+#=====================
+#-create a dialogue box that will collect current participant number, age, gender, 
+    #handedness
+print("All variables have been created! Now ready to show the dialog box!")
+exp_info = {    'subject_nr':0, 
+                'age':0, 
+                'handedness':('right','left','ambi'), 
+                'gender':(), 
+                'session': 1
+                }
+print(exp_info)
+
+print("All variables have been created! Now ready to show the dialog box!")
+
+my_dlg = gui.DlgFromDict(   dictionary=exp_info, 
+                            title = "subject info", 
+                            fixed = ['session'], 
+                            order = ['session', 'subject_nr', 'age', 'gender', 'handedness'])
+
+#get date and time
+#-create a unique filename for the data
+```
+
 5. Fill in the following pseudocode with the real code you have learned so far:
 
 ```
 #=====================
 #COLLECT PARTICIPANT INFO
 #=====================
-#-create a dialogue box that will collect current participant number, age, gender, handedness
+#-create a dialogue box that will collect current participant number, age, gender, 
+    #handedness
+print("All variables have been created! Now ready to show the dialog box!")
+exp_info = {    'subject_nr':0, 
+                'age':0, 
+                'handedness':('right','left','ambi'), 
+                'gender':(), 
+                'session': 1
+                }
+print(exp_info)
+
+print("All variables have been created! Now ready to show the dialog box!")
+
+my_dlg = gui.DlgFromDict(   dictionary=exp_info, 
+                            title = "subject info", 
+                            fixed = ['session'], 
+                            order = ['session', 'subject_nr', 'age', 'gender', 'handedness'])
+
 #get date and time
+date = datetime.now()
+
+exp_info['date'] = str(date.hour) + '-' + str(date.day) + '-' + str(date.month) + '-' + str(date.year)
+print(exp_info['date'])
+
 #-create a unique filename for the data
+filename =  str(exp_info['subject_nr']) + '-' + exp_info['date'] + '.csv'
+print(filename)
+
+main_dir = os.getcwd()
+sub_dir = os.path.join(main_dir,'sub_info',filename)
 ```
 
 # Monitor and window exercises
