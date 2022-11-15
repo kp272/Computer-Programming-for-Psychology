@@ -141,8 +141,74 @@ win = visual.Window(monitor=mon, size=(1200,500), color=[0.6, 0.7, 0.8], units =
 ### Check the psychopy help page on "ImageStim" to help you solve these exercises:
 
 1. Write a short script that shows different face images from the image directory at 400x400 pixels in size. What does this do to the images? How can you keep the proper image dimensions and still change the size?
+```
+import numpy as np
+from psychopy import core, gui, visual, event, monitors
+import json
+import os
+from datetime import datetime
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
+mon.setSizePix([1440,900])
+mon.save()
+win = visual.Window(monitor=mon, size=(1440,900), color=[0.6, 0.7, 0.8], units = "height", fullscr = True)
+
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir, 'images')
+
+fix_text = visual.TextStim(win, text = '+')
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+nTrials = 10
+
+for trial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[trial])
+    my_image.draw()
+    fix_text.draw()
+    win.flip()
+    event.waitKeys()
+
+win.close()
+```
 2. Write a short script that makes one image appear at a time, each in a different quadrant of your screen (put the window in fullscreen mode). Think about how you can calculate window locations without using a trial-and-error method.
+```
+import numpy as np
+from psychopy import core, gui, visual, event, monitors
+import json
+import os
+from datetime import datetime
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
+mon.setSizePix([1440,900])
+mon.save()
+win = visual.Window(monitor=mon, size=(1440,900), color=[0.6, 0.7, 0.8], units = "height", fullscr = True)
+
+x_axis = [-360, -360, 360, 360, -360, -360, 360, 360, -360, -360]
+y_axis = [-225, 225, 225, -225, -225, 225, 225, -225, -225, 225]
+coordinates = list(zip(x_axis, y_axis))
+
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir, 'images')
+
+fix_text = visual.TextStim(win, text = '+')
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+nTrials = 10
+
+for trial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[trial])
+    my_image.pos = coordinates[trial]
+    my_image.draw()
+    fix_text.draw()
+    win.flip()
+    event.waitKeys()
+
+win.close()
+```
 3. Create a fixation cross stimulus (hint:text stimulus).
+
 4. Fill in the following pseudocode with the real code you have learned so far:
 ```
 #=====================
