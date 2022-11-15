@@ -156,7 +156,7 @@ stimOrd_prop = np.zeros(20);
 mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
 mon.setSizePix([1440,900])
 mon.save()
-thisSize = mon.getSizePix() --> these 3 were for the alternation of stimuli n 4 quadrants
+thisSize = mon.getSizePix() # --> these 3 were for the alternation of stimuli n 4 quadrants
 thisWidth = thisSize[0]
 thisHeight = thisSize[1]
 horizMult = [-1, 1, 1, -1, -1, 1, 1, -1, -1, 1]
@@ -233,6 +233,7 @@ for thisBlock in range(nBlocks):
         my_image.image = os.path.join(image_dir, pics[thisTrial])
         my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
         my_image.draw()
+        fix_text.draw()
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
