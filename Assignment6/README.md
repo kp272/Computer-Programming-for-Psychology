@@ -105,14 +105,34 @@ sub_dir = os.path.join(main_dir,'sub_info',filename)
 ### Look at the psychopy help page on "window" to help solve the exercises:
 
 1. How does changing "units" affect how you define your window size?
+For the units, we can define it's ‘height’ (of the window), ‘norm’, ‘deg’, ‘cm’, ‘pix’. 
+- changing units to height doesn't affect how we define the window size, because PsychoPy automatically scales it to the window size, given that we have the ratio of the screen dimensions. 
+- changing units to norm means that we have to adjust or scale the units based on the dimensions of ou window. e.g. on a 1024x768 window the size=(0.75,1) will be square. 
+- when dealigng with 'deg', 'cm' and 'pix', its not so simple. 
+    - 'cm' requires : information about the screen width in cm and size in pixels
+    - 'deg' requires : information about the screen width in cm and pixels and the viewing distance in cm
+    - 'pix' requires : information about the size of the screen (not window) in pixels, although this can often be deduce from the operating system if
+      it has been set correctly there.
+    
 2. How does changing colorSpace affect how you define the color of your window? Can you define colors by name?
+There are three colour spaces: RGB, DKL and LMS. And for all three, we use a "[ #, #, #]" format to define a colour. However, colour can also be specified by a name (e.g. ‘DarkSalmon’) or by a hexadecimal string (e.g. ‘#00FF00’).Because there are three colour spaces, depending on which colour space you use, there are different ways that we can get the desired colour by manipulating the "[ #, #, #]" format. 
+Ex: 
+  for the RGB and the LMS format, the numbers range from (-1) to (1) --> [-1, 0.6, 0.5]
+  for the DKL format, the numbers range from 0-360 for the elevation and azimuth, and for the third number, it ranges from (-1) and (1)--> [55, 95, 0.6]
+
 3. Fill in the following pseudocode with the real code you have learned so far:
 ```
 #=====================
 #CREATION OF WINDOW AND STIMULI
 #=====================
 #-define the monitor settings using psychopy functions
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
+mon.setSizePix([1440,900])
+mon.save()
+
 #-define the window (size, color, units, fullscreen mode) using psychopy functions
+win = visual.Window(monitor=mon, size=(1200,500), color=[0.6, 0.7, 0.8], units = "height", fullscr = True)
+
 ```
 
 # Stimulus exercises
