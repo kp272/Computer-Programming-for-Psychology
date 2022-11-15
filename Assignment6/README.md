@@ -115,6 +115,7 @@ For the units, we can define it's ‘height’ (of the window), ‘norm’, ‘d
       it has been set correctly there.
     
 2. How does changing colorSpace affect how you define the color of your window? Can you define colors by name?
+
 There are three colour spaces: RGB, DKL and LMS. And for all three, we use a "[ #, #, #]" format to define a colour. However, colour can also be specified by a name (e.g. ‘DarkSalmon’) or by a hexadecimal string (e.g. ‘#00FF00’).Because there are three colour spaces, depending on which colour space you use, there are different ways that we can get the desired colour by manipulating the "[ #, #, #]" format. 
 Ex: 
   for the RGB and the LMS format, the numbers range from (-1) to (1) --> [-1, 0.6, 0.5]
