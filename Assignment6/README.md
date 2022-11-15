@@ -304,6 +304,7 @@ for thisBlock in range(nBlocks):
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
+        event.waitKeys()
         
         
         #-draw image
@@ -313,12 +314,26 @@ for thisBlock in range(nBlocks):
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
+        key = event.waitKeys()
+        print(key)
+        CorrectResponse = [True, True, True, True, True, True, True, True, True, True]
+        if key[0] == 'left'
+          if horizMult[thisTrial] == -1
+            CorrectResponse[thisTrial] = True
+          else 
+            CorrectResponse[thisTrial] = False
+        if key[0] == 'right'
+          if horizMult[thisTrial] == 1
+            CorrectResponse[thisTrial] = True
+          else 
+            CorrectResponse[thisTrial] = False
         
         #-draw end trial text
         my_textEnd.draw()
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
+        event.waitKeys()
         
 #======================
 # END OF EXPERIMENT
