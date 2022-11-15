@@ -180,18 +180,19 @@ import os
 from datetime import datetime
 
 stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir, 'images')
 
 mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
 mon.setSizePix([1440,900])
 mon.save()
+thisSize = mon.getSizePix()
+thisWidth = thisSize[0]
+thisHeight = thisSize[1]
 win = visual.Window(monitor=mon, size=(1440,900), color=[0.6, 0.7, 0.8], units = "height", fullscr = True)
 
-x_axis = [-360, -360, 360, 360, -360, -360, 360, 360, -360, -360]
-y_axis = [-225, 225, 225, -225, -225, 225, 225, -225, -225, 225]
-coordinates = list(zip(x_axis, y_axis))
-
-main_dir = os.getcwd()
-image_dir = os.path.join(main_dir, 'images')
+horizMult = [-1, 1, 1, -1, -1, 1, 1, -1, -1, 1]
+vertMult = [1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
 
 fix_text = visual.TextStim(win, text = '+')
 my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
@@ -199,7 +200,7 @@ nTrials = 10
 
 for trial in range(nTrials):
     my_image.image = os.path.join(image_dir, stims[trial])
-    my_image.pos = coordinates[trial]
+    my_image.pos = (horizMult[trial] * thisWidth/4, vertMult[trial] * thisHeight/4)
     my_image.draw()
     fix_text.draw()
     win.flip()
@@ -208,7 +209,9 @@ for trial in range(nTrials):
 win.close()
 ```
 3. Create a fixation cross stimulus (hint:text stimulus).
+```
 
+```
 4. Fill in the following pseudocode with the real code you have learned so far:
 ```
 #=====================
