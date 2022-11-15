@@ -148,7 +148,7 @@ import json
 import os
 from datetime import datetime
 
-stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+pics = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
 
 mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
 mon.setSizePix([1440,900])
@@ -162,8 +162,8 @@ fix_text = visual.TextStim(win, text = '+')
 my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
 nTrials = 10
 
-for trial in range(nTrials):
-    my_image.image = os.path.join(image_dir, stims[trial])
+for thisTrial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[thisTrial])
     my_image.draw()
     fix_text.draw()
     win.flip()
@@ -179,7 +179,7 @@ import json
 import os
 from datetime import datetime
 
-stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+pics = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
 main_dir = os.getcwd()
 image_dir = os.path.join(main_dir, 'images')
 
@@ -198,9 +198,9 @@ fix_text = visual.TextStim(win, text = '+')
 my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
 nTrials = 10
 
-for trial in range(nTrials):
-    my_image.image = os.path.join(image_dir, stims[trial])
-    my_image.pos = (horizMult[trial] * thisWidth/4, vertMult[trial] * thisHeight/4)
+for thisTrial in range(nTrials):
+    my_image.image = os.path.join(image_dir, pics[thisTrial])
+    my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
     my_image.draw()
     fix_text.draw()
     win.flip()
@@ -209,8 +209,43 @@ for trial in range(nTrials):
 win.close()
 ```
 3. Create a fixation cross stimulus (hint:text stimulus).
-```
 
+I have been doing the questions with the fixation cross, so I have just copy and pasted my entire code again.
+```
+import numpy as np
+from psychopy import core, gui, visual, event, monitors
+import json
+import os
+from datetime import datetime
+
+pics = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg','face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir, 'images')
+
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60) 
+mon.setSizePix([1440,900])
+mon.save()
+thisSize = mon.getSizePix()
+thisWidth = thisSize[0]
+thisHeight = thisSize[1]
+win = visual.Window(monitor=mon, size=(1440,900), color=[0.6, 0.7, 0.8], units = "height", fullscr = True)
+
+horizMult = [-1, 1, 1, -1, -1, 1, 1, -1, -1, 1]
+vertMult = [1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
+
+fix_text = visual.TextStim(win, text = '+')
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+nTrials = 10
+
+for thisTrial in range(nTrials):
+    my_image.image = os.path.join(image_dir, pics[thisTrial])
+    my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
+    my_image.draw()
+    fix_text.draw()
+    win.flip()
+    event.waitKeys()
+
+win.close()
 ```
 4. Fill in the following pseudocode with the real code you have learned so far:
 ```
@@ -218,45 +253,76 @@ win.close()
 #CREATION OF WINDOW AND STIMULI
 #=====================
 #-define experiment start text unsing psychopy functions
+start_message = "Welcome to the experiment"
+my_textStart = visual.TextStim(win, text=start_message)
+
 #-define block (start)/end text using psychopy functions
-#-define stimuli using psychopy functions (images, fixation cross)
+block_msg = "Press any key to continue to the next block"
+my_textBlock = visual.TextStim(win, text=block_msg)
+end_trial_msg = "End of Trial"
+
+
+#-define stimuli using psychopy functions
+fix_text = visual.TextStim(win, text = '+')
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+
 
 #=====================
 #START EXPERIMENT
 #=====================
 #-present start message text
+my_textStart.draw()
+win.flip()
+
 #-allow participant to begin experiment with button press
+my_textBlock.draw()
+win.flip()
 
 #=====================
 #BLOCK SEQUENCE
 #=====================
-#-for loop for nBlocks
+#-for loop for nBlocks *
+for thisBlock in range(nBlocks):
     #-present block start message
-    #-randomize order of trials here
+    print('Welcome to block' + str(thisBlock+1))
+    #-randomize order of trials here *
+    np.random.shuffle(catimgs)
     
     #=====================
     #TRIAL SEQUENCE
     #=====================    
-    #-for loop for nTrials
+    #-for loop for nTrials *
+    for thisTrial in range(nTrials):
         #-set stimuli and stimulus properties for the current trial
+        print('Trial' + str(thisTrial+1))
         
         #=====================
         #START TRIAL
         #=====================  
         #-draw fixation
+        fix_text.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
+        
         #-draw image
+        my_image.image = os.path.join(image_dir, pics[thisTrial])
+        my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
+        my_image.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
         #-draw end trial text
+        my_textEnd.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
 #======================
 # END OF EXPERIMENT
 #======================        
 #-close window
+win.close()
 ```
