@@ -1,6 +1,6 @@
 # Wait Exercises
 
-Fill in the following pseudocode with the real code you have learned so far using "core.wait" (and run it to make sure it works):
+1. Fill in the following pseudocode with the real code you have learned so far using "core.wait" (and run it to make sure it works):
 ```
 #=====================
         #START TRIAL
