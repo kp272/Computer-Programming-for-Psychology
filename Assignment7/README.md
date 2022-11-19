@@ -2,7 +2,7 @@
 
 1. Fill in the following pseudocode with the real code you have learned so far using "core.wait" (and run it to make sure it works):
 ```
-#=====================
+        #=====================
         #START TRIAL
         #===================== 
         #-draw fixation
@@ -17,7 +17,7 @@
         #-flip window
         #-wait time (stimulus duration)
 ```
-
+This was my code
 ```
 #=====================
 #IMPORT MODULES
