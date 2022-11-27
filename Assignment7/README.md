@@ -1458,8 +1458,8 @@ sub_dir = os.path.join(main_dir,'sub_info',filename)
 #STIMULUS AND TRIAL SETTINGS
 #=====================
 #-number of trials and blocks *
-nTrials = 5
-nBlocks = 1
+nTrials = 10
+nBlocks = 2
 
 #-stimulus names (and stimulus extensions, if images) *
 cats = ['faces'] * 10
@@ -1649,7 +1649,7 @@ for thisBlock in range(nBlocks):
         #-flip window
             win.flip()
         #-collect subject response for that trial
-            key = event.waitKeys(maxWait = (stimulus_timer.getTime() <= 2), timeStamped = stimulus_timer, keyList=['left', 'right'])
+            key = event.waitKeys(maxWait = (response_timer.getTime() <= 2), timeStamped = response_timer)
             print(key)
         #-wait time (stimulus duration)
         endTime = stimulus_timer.getTime()
@@ -1660,11 +1660,6 @@ for thisBlock in range(nBlocks):
         
         #-draw stimulus
         #-...
-        
-        
-        
-        
-        print(key)
         
         #-collect subject response time for that trial
         print("The test took {} sec." .format(endTime - startTime)) 
@@ -1704,11 +1699,138 @@ win.close()
 ```
 This was my output:
 ```
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignments/Assignment7.py ######
+2022-11-27 12:56:22.240 python[40477:8158257] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignments
+/Users/kasti/Desktop/PSYCH 403/Assignments
+All variables have been created! Now ready to show the dialog box!
+{'subject_nr': 0, 'age': 0, 'handedness': ('right', 'left', 'ambi'), 'gender': (), 'session': 1}
+All variables have been created! Now ready to show the dialog box!
+12-27-11-2022
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+cat1.jpg was found!
+cat2.jpg was found!
+cat3.jpg was found!
+cat4.jpg was found!
+cat5.jpg was found!
+cat6.jpg was found!
+cat7.jpg was found!
+cat8.jpg was found!
+cat9.jpg was found!
+cat10.jpg was found!
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
+Welcome to block1
+Trial1
+[['left', 0.36566315102390945]]
+None
+None
+The test took 2.4039604669669643 sec.
+Trial2
+[['right', 0.4589278909843415]]
+None
+None
+The test took 2.515560550033115 sec.
+Trial3
+[['right', 0.46652321703732014]]
+None
+None
+The test took 2.498114730929956 sec.
+Trial4
+[['left', 0.5287969779456034]]
+None
+None
+The test took 2.561549846082926 sec.
+Trial5
+[['left', 0.48010712198447436]]
+None
+None
+The test took 2.5077062440104783 sec.
+Trial6
+[['right', 0.5540585570270196]]
+None
+None
+The test took 2.5801601139828563 sec.
+Trial7
+[['right', 0.36893613007850945]]
+None
+None
+The test took 2.390250088996254 sec.
+Trial8
+[['left', 0.2557339839404449]]
+None
+None
+The test took 2.284451171057299 sec.
+Trial9
+[['left', 0.3320890279719606]]
+None
+None
+The test took 2.364612063043751 sec.
+Trial10
+[['right', 0.2515513760736212]]
+None
+None
+The test took 2.282350260997191 sec.
+Welcome to block2
+Trial1
+[['left', 0.28108620597049594]]
+None
+None
+The test took 2.3065746549982578 sec.
+Trial2
+[['right', 0.291640629991889]]
+None
+None
+The test took 2.3476247700164095 sec.
+Trial3
+[['right', 0.15670168003998697]]
+None
+None
+The test took 2.199912774027325 sec.
+Trial4
+[['left', 0.29951053694821894]]
+None
+None
+The test took 2.3308174510020763 sec.
+Trial5
+[['left', 0.22940655797719955]]
+None
+None
+The test took 2.2575635300017893 sec.
+Trial6
+[['right', 0.2890409129904583]]
+None
+None
+The test took 2.3198664450319484 sec.
+Trial7
+[['right', 0.3036961629986763]]
+None
+None
+The test took 2.3333915380062535 sec.
+Trial8
+[['left', 0.5549270629417151]]
+None
+None
+The test took 2.584121780935675 sec.
+Trial9
+[['left', 0.33402946090791374]]
+None
+None
+The test took 2.3659531619632617 sec.
+Trial10
+[['right', 0.33729990397114307]]
+None
+None
+The test took 2.36812965804711 sec.
+7.3950     ERROR     Error in handleLineEditChange: inputFieldName=subject_nr, type=<class 'int'>, value=, error=invalid literal for int() with base 10: ''
+################ Experiment ended with exit code 0 [pid:40477] #################
 
 ```
 
 # Frame-based timing exercises
 1. Adjust your experiment so that it follows frame-based timing rather than clock timing (comment out the clock-based timing code in case you want to use it again) using for loops and if statements.
+
+
 
 2. Add a "dropped frame" detector to your script to find out whether your experiment is dropping frames. How many total frames are dropped in the experiment? If 20 or fewer frames are dropped in the whole experiment (1 frame per trial), keep frame-based timing in your experiment. Otherwise, switch back to the CountdownTimer.
 
