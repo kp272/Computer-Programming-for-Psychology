@@ -896,7 +896,7 @@ for thisBlock in range(nBlocks):
         core.wait(.5)
         
         clock_wait_timer.reset()
-        startTime = clock_wait_timer.getTime()
+        startTime = wait_timer.getTime()
         while clock_wait_timer.getTime() <=2:
         #-draw image
             my_image.image = os.path.join(image_dir, pics[thisTrial])
@@ -906,7 +906,7 @@ for thisBlock in range(nBlocks):
         #-flip window
             win.flip()
         #-wait time (stimulus duration)
-        endTime = clock_wait_timer.getTime()
+        endTime = wait_timer.getTime()
         
         
     
@@ -964,46 +964,46 @@ cat10.jpg was found!
 [('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
 Welcome to block1
 Trial1
-The test took 2.01362641598098 sec.
+The test took 2.00092310202308 sec.
 Trial2
-The test took 2.0182343589840457 sec.
+The test took 2.027687667054124 sec.
 Trial3
-The test took 2.0064099529990926 sec.
+The test took 2.009592536953278 sec.
 Trial4
-The test took 2.010473844013177 sec.
+The test took 2.011553360032849 sec.
 Trial5
-The test took 2.0064443229930475 sec.
+The test took 2.0066935929935426 sec.
 Trial6
-The test took 2.006320275948383 sec.
+The test took 2.0065280199050903 sec.
 Trial7
-The test took 2.008093739976175 sec.
+The test took 2.0080410899827257 sec.
 Trial8
-The test took 2.0073372090701014 sec.
+The test took 2.007913374924101 sec.
 Trial9
-The test took 2.0071187029825523 sec.
+The test took 2.007684299023822 sec.
 Trial10
-The test took 2.0205882769078016 sec.
+The test took 2.0064346570288762 sec.
 Welcome to block2
 Trial1
-The test took 2.0069428980350494 sec.
+The test took 2.006043661967851 sec.
 Trial2
-The test took 2.028368460945785 sec.
+The test took 2.0234206850873306 sec.
 Trial3
-The test took 2.010702210944146 sec.
+The test took 2.005862803896889 sec.
 Trial4
-The test took 2.0123228860320523 sec.
+The test took 2.012936130980961 sec.
 Trial5
-The test took 2.011095975060016 sec.
+The test took 2.0089825419709086 sec.
 Trial6
-The test took 2.0055519359884784 sec.
+The test took 2.0057032839395106 sec.
 Trial7
-The test took 2.008668900001794 sec.
+The test took 2.001950348028913 sec.
 Trial8
-The test took 2.0060367670375854 sec.
+The test took 2.00707767799031 sec.
 Trial9
-The test took 2.007944879005663 sec.
+The test took 2.008607789990492 sec.
 Trial10
-The test took 2.006102008977905 sec.
+The test took 2.00418703595642 sec.
 ################ Experiment ended with exit code 0 [pid:77572] #################
 
 ```
