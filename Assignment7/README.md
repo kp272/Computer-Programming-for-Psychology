@@ -1830,7 +1830,69 @@ The test took 2.36812965804711 sec.
 # Frame-based timing exercises
 1. Adjust your experiment so that it follows frame-based timing rather than clock timing (comment out the clock-based timing code in case you want to use it again) using for loops and if statements.
 
+```
+from psychopy import core, visual, event, monitors
 
+#define the monitor parameters
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60)
+mon.setSizePix([1440,900])
+win = visual.Window(monitor=mon) #define a window
+
+import os
+#stuff you only have to define at the top of your screen
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir,'images')
+
+fix_text = visual.TextStim(win, text='+')
+my_image = visual.ImageStim(win)
+
+stims = ['face01.jpg','face02.jpg','face03.jpg']
+nTrials=3
+
+fixTime = .5
+stimTime = 1.0
+
+refresh = 1.0/60.0
+
+fixFrames = int(fixTime/refresh)
+stimFrames = 1
+totalFrames = fixFrames + stimFrames + fixFrames
+waitTimer = core.Clock()
+
+for trial in range(nTrials): #loop through trials
+    
+    my_image.image = os.path.join(image_dir,stims[trial])
+
+
+
+    for nFrames in range(totalFrames):
+        
+        if 0 <= nFrames <= fixFrames:
+            fix_text.draw() #draw
+            win.flip() #show
+        
+        
+        if fixFrames < nFrames <= fixFrames + stimFrames:    
+            if nFrames == fixFrames + 1:
+                imgStartTime = waitTimer.getTime()
+            my_image.draw()
+            win.flip()
+            
+        
+        
+        if fixFrames + stimFrames < nFrames < totalFrames: 
+            if nFrames == fixFrames + stimFrames + 1:
+                imgEndTime = waitTimer.getTime()
+            fix_text.draw() #draw
+            win.flip() #show
+        
+    
+    
+    
+    print("image Duration was {} seconds".format(
+        imgEndTime - imgStartTime))
+win.close()
+```
 
 2. Add a "dropped frame" detector to your script to find out whether your experiment is dropping frames. How many total frames are dropped in the experiment? If 20 or fewer frames are dropped in the whole experiment (1 frame per trial), keep frame-based timing in your experiment. Otherwise, switch back to the CountdownTimer.
 
