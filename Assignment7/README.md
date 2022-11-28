@@ -1896,3 +1896,56 @@ win.close()
 
 2. Add a "dropped frame" detector to your script to find out whether your experiment is dropping frames. How many total frames are dropped in the experiment? If 20 or fewer frames are dropped in the whole experiment (1 frame per trial), keep frame-based timing in your experiment. Otherwise, switch back to the CountdownTimer.
 
+Answer 2: 0 frames were dropped
+
+This was my code
+```
+from psychopy import core, visual, event, monitors
+
+#define the monitor parameters
+mon = monitors.Monitor('myMonitor', width=35.89, distance=60)
+mon.setSizePix([1440,900])
+win = visual.Window(monitor=mon) #define a window
+
+import os
+#stuff you only have to define at the top of your screen
+main_dir = os.getcwd()
+image_dir = os.path.join(main_dir,'images')
+
+fix_text = visual.TextStim(win, text='+')
+my_image = visual.ImageStim(win)
+
+stims = ['face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg', 'face01.jpg','face02.jpg','face03.jpg']
+nTrials=len(stims)
+
+refresh = 1.0/60.0
+
+fixFrames = 1
+stimFrames = 1
+totalFrames = stimFrames + fixFrames
+
+waitTimer = core.Clock()
+
+for trial in range(nTrials): #loop through trials
+    
+    my_image.image = os.path.join(image_dir,stims[trial])
+    
+    for nFrames in range(totalFrames):
+
+        if 0 < nFrames <= stimFrames:    
+            my_image.draw()
+            win.flip()
+        
+        if  stimFrames < nFrames < totalFrames: 
+            fix_text.draw() #draw
+            win.flip() #show
+print('Overall, %i frames were dropped.' %win.nDroppedFrames)        
+win.close()
+```
+This was my output
+```
+##### Running: /Users/kasti/Desktop/PSYCH 403/Assignments/untitled-7.4.py ######
+2022-11-28 11:35:24.782 python[50209:8685581] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+Overall, 0 frames were dropped.
+################ Experiment ended with exit code 0 [pid:50209] #################
+```
