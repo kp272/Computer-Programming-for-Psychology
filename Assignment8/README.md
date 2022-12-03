@@ -352,6 +352,244 @@ The test took 2.191165911965072 sec.
 ```
 2. Statement placement in your script is very important when collecting responses and refreshing keypresses. What happens if you put event.ClearEvents within the trial loop instead of outside the trial loop? What happens if you unindent the "if keys:" line?
 
+First I put "event.clearEvents()" inside the "for trial" loop in my code I pasted in question #1. The output that I got was the same. 
+                
+```
+#=====================
+#BLOCK SEQUENCE
+#=====================
+#-for loop for nBlocks *
+for thisBlock in range(nBlocks):
+    #-present block start message
+    print('Welcome to block' + str(thisBlock+1))
+    #-randomize order of trials here *
+    np.random.shuffle(catimgs)
+    #-reset response time clock here
+    block_timer.reset()
+    block_timer_start = block_timer.getTime()
+    
+    #=====================
+    #TRIAL SEQUENCE
+    #=====================    
+    #-for loop for nTrials *
+    
+    for thisTrial in range(nTrials):
+        #-set stimuli and stimulus properties for the current trial
+        print('Trial' + str(thisTrial+1))
+        #-reset response time clock here
+        trial_timer.reset()
+        trial_timer_start = trial_timer.getTime()
+        #-empty keypresses
+        count = -1
+        
+        
+        #=====================
+        #START TRIAL
+        #=====================   
+        stimulus_timer.reset()
+        while stimulus_timer.getTime() <= 1: 
+        #-draw fixation
+            fix_text.draw()
+        #-flip window
+            win.flip()
+        #-wait time (stimulus duration)
+            # core.wait(.5)
+        
+        stimulus_timer.reset()
+        response_timer.reset()
+        startTime = stimulus_timer.getTime()
+        while stimulus_timer.getTime() <= 2:
+        #-draw image
+            my_image.image = os.path.join(image_dir, pics[thisTrial])
+            my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
+            my_image.draw()
+            fix_text.draw()
+        #-flip window
+            win.flip()
+        #-collect subject response for that trial
+            event.clearEvents()
+            key = event.waitKeys(maxWait = (response_timer.getTime() <= 2), timeStamped = response_timer)
+            if key:
+                count=count+1 #count up the number of times a key is pressed
+                if count == 0: #if this is the first time a key is pressed
+                    print(key)
+                
+        #-wait time (stimulus duration)
+        endTime = stimulus_timer.getTime()
+        
+        #-draw stimulus
+        #-flip window
+        #-wait time (stimulus duration)
+        
+        #-draw stimulus
+        #-...
+        
+        #-collect subject response time for that trial
+        print("The test took {} sec." .format(endTime - startTime)) 
+        
+        #-collect accuracy for that trial
+        #if key[0] == 'left':
+            #if horizMult[thisTrial] == -1:
+                #CorrectResponse[thisTrial] = True
+            #else:
+                #CorrectResponse[thisTrial] = False
+        # if key[0] == 'right':
+            #if horizMult[thisTrial] == 1:
+                #CorrectResponse[thisTrial] = True
+            #else:
+                #CorrectResponse[thisTrial] = False
+        
+        #-draw end trial text
+        stimulus_timer.reset()
+        while stimulus_timer.getTime() <= 1:
+            my_textEnd.draw()
+        #-flip window
+            win.flip()
+        #-wait time (stimulus duration)
+            # core.wait(.5)
+        
+        trial_end_time = trial_timer.getTime()
+    
+    block_end_time = block_timer.getTime() 
+
+```
+Then I put "event.clearEvents()" outside the "for trial" loop in my code I pasted in question #1. The output that I got was, again, the same. 
+
+```
+#=====================
+#BLOCK SEQUENCE
+#=====================
+#-for loop for nBlocks *
+for thisBlock in range(nBlocks):
+    #-present block start message
+    print('Welcome to block' + str(thisBlock+1))
+    #-randomize order of trials here *
+    np.random.shuffle(catimgs)
+    #-reset response time clock here
+    block_timer.reset()
+    block_timer_start = block_timer.getTime()
+    
+    #=====================
+    #TRIAL SEQUENCE
+    #=====================    
+    #-for loop for nTrials *
+    event.clearEvents()
+    for thisTrial in range(nTrials):
+        #-set stimuli and stimulus properties for the current trial
+        print('Trial' + str(thisTrial+1))
+        #-reset response time clock here
+        trial_timer.reset()
+        trial_timer_start = trial_timer.getTime()
+        #-empty keypresses
+        count = -1
+        
+        
+        #=====================
+        #START TRIAL
+        #=====================   
+        stimulus_timer.reset()
+        while stimulus_timer.getTime() <= 1: 
+        #-draw fixation
+            fix_text.draw()
+        #-flip window
+            win.flip()
+        #-wait time (stimulus duration)
+            # core.wait(.5)
+        
+        stimulus_timer.reset()
+        response_timer.reset()
+        startTime = stimulus_timer.getTime()
+        while stimulus_timer.getTime() <= 2:
+        #-draw image
+            my_image.image = os.path.join(image_dir, pics[thisTrial])
+            my_image.pos = (horizMult[thisTrial] * thisWidth/4, vertMult[thisTrial] * thisHeight/4)
+            my_image.draw()
+            fix_text.draw()
+        #-flip window
+            win.flip()
+        #-collect subject response for that trial
+            
+            key = event.waitKeys(maxWait = (response_timer.getTime() <= 2), timeStamped = response_timer)
+            if key:
+                count=count+1 #count up the number of times a key is pressed
+                if count == 0: #if this is the first time a key is pressed
+                    print(key)
+                
+        #-wait time (stimulus duration)
+        endTime = stimulus_timer.getTime()
+        
+        #-draw stimulus
+        #-flip window
+        #-wait time (stimulus duration)
+        
+        #-draw stimulus
+        #-...
+        
+        #-collect subject response time for that trial
+        print("The test took {} sec." .format(endTime - startTime)) 
+        
+        #-collect accuracy for that trial
+        #if key[0] == 'left':
+            #if horizMult[thisTrial] == -1:
+                #CorrectResponse[thisTrial] = True
+            #else:
+                #CorrectResponse[thisTrial] = False
+        # if key[0] == 'right':
+            #if horizMult[thisTrial] == 1:
+                #CorrectResponse[thisTrial] = True
+            #else:
+                #CorrectResponse[thisTrial] = False
+        
+        #-draw end trial text
+        stimulus_timer.reset()
+        while stimulus_timer.getTime() <= 1:
+            my_textEnd.draw()
+        #-flip window
+            win.flip()
+        #-wait time (stimulus duration)
+            # core.wait(.5)
+        
+        trial_end_time = trial_timer.getTime()
+    
+    block_end_time = block_timer.getTime() 
+```
+When I unindented the "if keys:" statement, there was no response printed in my output (output is pasted below):
+```
+###### Running: /Users/kasti/Desktop/PSYCH 403/Assignments/Assignment7.py ######
+2022-12-03 16:28:47.473 python[87121:10819101] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignments
+/Users/kasti/Desktop/PSYCH 403/Assignments
+All variables have been created! Now ready to show the dialog box!
+{'subject_nr': 0, 'age': 0, 'handedness': ('right', 'left', 'ambi'), 'gender': (), 'session': 1}
+All variables have been created! Now ready to show the dialog box!
+16-3-12-2022
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg', 'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+cat1.jpg was found!
+cat2.jpg was found!
+cat3.jpg was found!
+cat4.jpg was found!
+cat5.jpg was found!
+cat6.jpg was found!
+cat7.jpg was found!
+cat8.jpg was found!
+cat9.jpg was found!
+cat10.jpg was found!
+[('faces', 'im1.png'), ('faces', 'im2.png'), ('faces', 'im3.png'), ('faces', 'im4.png'), ('faces', 'im5.png'), ('faces', 'im6.png'), ('faces', 'im7.png'), ('faces', 'im8.png'), ('faces', 'im9.png'), ('faces', 'im10.png')]
+Welcome to block1
+Trial1
+The test took 2.04748394805938 sec.
+Trial2
+The test took 2.535051153972745 sec.
+Welcome to block2
+Trial1
+The test took 2.4860871999990195 sec.
+Trial2
+The test took 2.8507503459695727 sec.
+################ Experiment ended with exit code 0 [pid:87121] #################
+
+```
+
 # Psychtoolbox keypress exercises
 1. Notice how "for key in keys:" in the kb examples of level6 are not indented within the stimulus presentation while loop. What happens if you indent this line? How is this different from event.getKeys?
 
