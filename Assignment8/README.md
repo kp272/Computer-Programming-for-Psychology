@@ -707,6 +707,129 @@ problem= ('4-1=', 3) correct response= 3 subject response= 1 subject accuracy= 2
 
 1. Using csv.DictWriter (use your favorite search engine to find the help page), save your dictionary (that you created above) as a .csv file.
 
+```
+from psychopy import core, event, visual, monitors
+import numpy as np
+import csv
+import os
+
+#monitor specs
+mon = monitors.Monitor('myMonitor', width=35.56, distance=60)
+mon.setSizePix([1920, 1080])
+win = visual.Window(monitor=mon, size=(400,400), color=[-1,-1,-1])
+
+filename = 'subject1session1Nov28.csv'
+main_dir = os.getcwd() #define the main directory where experiment info is stored
+data_dir = os.path.join(main_dir,'data',filename)
+print(data_dir)
+
+#blocks, trials, stims, and clocks
+nBlocks=2
+nTrials=4
+my_text=visual.TextStim(win)
+rt_clock = core.Clock()  # create a response time clock
+cd_timer = core.CountdownTimer() #add countdown timer
+
+#prefill lists and dictionary for responses
+sub_resp = dict()
+sub_acc = dict()
+prob = dict()
+corr_resp = dict()
+resp_time = dict()
+
+my_dict = {'key name':sub_resp, 'subject RT':resp_time, 'subject accuracy':sub_acc, 'correct responses':corr_resp}
+
+data_as_list = [sub_resp, sub_acc, prob, corr_resp, resp_time]
+
+#create problems and solutions to show
+math_problems = ['1+3=','1+1=','3-2=','4-1='] #write a list of simple arithmetic
+solutions = [4,2,1,3] #write solutions
+prob_sol = list(zip(math_problems,solutions))
+
+for block in range(nBlocks):
+    sub_resp[block] = [-1]*nTrials
+    sub_acc[block] = [-1]*nTrials
+    prob[block] = [-1]*nTrials
+    corr_resp[block] = [-1]*nTrials
+    resp_time[block] = [-1]*nTrials
+    for trial in range(nTrials):
+        #what problem will be shown and what is the correct response?
+        prob[block][trial] = prob_sol[np.random.choice(4)]
+        corr_resp[block][trial] = prob[block][trial][1]
+        
+        rt_clock.reset()  # reset timing for every trial
+        cd_timer.add(3) #add 3 seconds
+
+        event.clearEvents(eventType='keyboard')  # reset keys for every trial
+        
+        count=-1 #for counting keys
+        while cd_timer.getTime() > 0: #for 3 seconds
+
+            my_text.text = prob[block][trial][0] #present the problem for that trial
+            my_text.draw()
+            win.flip()
+
+            #collect keypresses after first flip
+            keys = event.getKeys(keyList=['1','2','3','4','escape'])
+
+            if keys:
+                count=count+1 #count up the number of times a key is pressed
+
+                if count == 0: #if this is the first time a key is pressed
+                    #get RT for first response in that loop
+                    resp_time[block][trial] = rt_clock.getTime()
+                    #get key for only the first response in that loop
+                    sub_resp[block][trial] = keys[0] #remove from list
+
+        #record subject accuracy
+        #correct- remembers keys are saved as strings
+        if sub_resp[block][trial] == str(corr_resp[block][trial]):
+            sub_acc[block][trial] = 1 #arbitrary number for accurate response
+        #incorrect- remember keys are saved as strings              
+        elif sub_resp[block][trial] != str(corr_resp[block][trial]):
+            sub_acc[block][trial] = 2 #arbitrary number for inaccurate response 
+                                    #(should be something other than 0 to distinguish 
+                                    #from non-responses)
+                    
+        #print results
+        print('problem=', prob[block][trial], 'correct response=', 
+              corr_resp[block][trial], 'subject response=',sub_resp[block][trial], 
+              'subject accuracy=',sub_acc[block][trial])
+
+
+with open(data_dir, mode = 'w') as sub_data:
+    data_writer = csv.writer(sub_data, delimiter = ',')
+    data_writer.writerow(data_as_list)
+    
+win.close()
+
+```
+This was my output:
+```
+####### Running: /Users/kasti/Desktop/PSYCH 403/Assignments/untitled.py ########
+2022-12-03 17:45:35.206 python[87840:10895262] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/f5/p7ypm_qj1tz18rjd6bfnzrwr0000gn/T/org.opensciencetools.psychopy.savedState
+/Users/kasti/Desktop/PSYCH 403/Assignments/data/subject1session1Nov28.csv
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('4-1=', 3) correct response= 3 subject response= 1 subject accuracy= 2
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('1+3=', 4) correct response= 4 subject response= 1 subject accuracy= 2
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('1+3=', 4) correct response= 4 subject response= 1 subject accuracy= 2
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('1+1=', 2) correct response= 2 subject response= 1 subject accuracy= 2
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('3-2=', 1) correct response= 1 subject response= 1 subject accuracy= 1
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('3-2=', 1) correct response= 1 subject response= 1 subject accuracy= 1
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('4-1=', 3) correct response= 3 subject response= 1 subject accuracy= 2
+WARNING:root:DEPRECATED: Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime()
+problem= ('4-1=', 3) correct response= 3 subject response= 1 subject accuracy= 2
+################ Experiment ended with exit code 0 [pid:87840] #################
+```
+This was the excel sheet output:
+{0: ['1', '1', '1', '1'], 1: ['1', '1', '1', '1']}	{0: [2, 2, 2, 2], 1: [1, 1, 2, 2]}	{0: [('4-1=', 3), ('1+3=', 4), ('1+3=', 4), ('1+1=', 2)], 1: [('3-2=', 1), ('3-2=', 1), ('4-1=', 3), ('4-1=', 3)]}	{0: [3, 4, 4, 2], 1: [1, 1, 3, 3]}	{0: [0.9540578620508313, 2.3404440919402987, 0.6197542028967291, 0.34875560319051147], 1: [0.3011722059454769, 0.21794727491214871, 0.6682008188217878, 0.6836525141261518]}
+
 # Save JSON exercises
 
 1. Add JSON filesaving to your experiment script.
