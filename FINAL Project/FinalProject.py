@@ -1,4 +1,41 @@
 
+# There should be 3 blocks of 12 trials each. 
+# Each trial should have a single colour word in a single colour ink (pixels). 
+# Use the colours 'red', 'green', and 'blue'. 
+# Each block should have 
+    # 6 "congruent" trials where the colour word and colour match (2 of each of the three colours), 
+    # 6 "incongruent" trials where they don't match (each combination of color word and ink colour that don't match = 3 colours * 2 incongruent names each = 6.
+# pressing letters ('r', 'g', or 'b') to indicate the ink colour 
+# record 
+    # trial             (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+    # block             (1, 2, 3)
+    # word              ('red', 'green', 'blue')
+    # ink colour        (red, green, blue)
+    # response          ('r', 'g', 'b')
+    # accuracy          (Correct, Incorrect)
+    # reaction time     (seconds)
+# You will save these into a csv output file formated as in the example in Q6 & Q7.
+# Words should appear 
+    # following a fixation shown for 250 ms on each trial, 
+    # and should remain on the screen until the response is collected
+
+# each block looks like this and we randmize this:
+# congruent (6 trials)
+    # red in red
+    # red in red
+    # green in green 
+    # green in green
+    # blue in blue
+    # blue in blue
+
+# in congruent (6 trials)
+    # red in green
+    # red in blue
+    # green in red 
+    # green in blue
+    # blue in red
+    # blue in green
+
 #=====================
 #IMPORT MODULES
 #=====================
@@ -119,14 +156,14 @@ for block in range(nBlocks):
                 else: 
                     accuracies[overallTrial] = 'Incorrect'
             
-        print('Trial:', trial+1, 'Condition:', trials[overallTrial][2], ', Word:', trials[overallTrial][0], ', Ink Colour:', trials[overallTrial][1] , ', Accuracy:', accuracies[overallTrial], ', Subject response:', keys, ', RT:', responseTimes[overallTrial])
+        print('Block:', block+1, ',Trial:', trial+1, ',Condition:', trials[overallTrial][2], ', Word:', trials[overallTrial][0], ', Ink Colour:', trials[overallTrial][1] , ', Accuracy:', accuracies[overallTrial], ', Subject response:', keys, ', RT:', responseTimes[overallTrial])
 
 df = pd.DataFrame(data={
  "Block Number": blockNumbers,
  "Trial Number": trialNumbers, 
- "Word": words,
  "Condition": conditions,
- "Ink Colours": colours, 
+ "Word": words,
+ "Ink Colours": colours,
  "Accuracy": accuracies, 
  "Response Time": responseTimes
 })
