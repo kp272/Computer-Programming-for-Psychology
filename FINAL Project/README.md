@@ -1,3 +1,9 @@
+My name is Kasti Patel. This file is the README file where I have explained my experiment and what it does in details.
+
+
+The name of my Final Project File where my code is "FinalProject.py" --> See file [FinalProject.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/FINAL%20Project/FinalProject.py)
+
+
 There are 2 blocks of 18 trials each. 
 
 Each trial has a single word in a single coloured ink.
