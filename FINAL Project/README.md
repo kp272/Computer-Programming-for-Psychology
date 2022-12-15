@@ -13,6 +13,7 @@ Each block has
 The subject should press letters ('r', 'g', or 'b') to indicate the ink colour, not the word of the colour. (ex: for word "red" in blue, they have to pick blue) 
 
 This experiment records 
+
     - trials             (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)
     - blocks             (1, 2)
     - words              ('dog','cat','house','bottle','blanket','pan' for trials 1-6) and ('red','green','blue' for trials 7-18 )
@@ -22,11 +23,13 @@ This experiment records
     - reaction time     (seconds)
 
 I saveed these into a csv output file
+
 Words remained on the screen until the response was collected
 
 each block looks something like this and I randmized this:
 
 control (6 trials)
+
     - dog in red
     - cat in red
     - house in green 
@@ -35,6 +38,7 @@ control (6 trials)
     - pan in blue
 
 conguent (6 trials)
+
     - red in red
     - red in red
     - green in green 
@@ -43,6 +47,7 @@ conguent (6 trials)
     - blue in blue
 
 in congruent (6 trials)
+
     - red in green
     - red in blue
     - green in red 
