@@ -1,5 +1,4 @@
 
-
 #=====================
 #IMPORT MODULES
 #=====================
@@ -43,6 +42,7 @@ condition = ['neutral'] * 6 + ['congruent'] * 6 + ['incongruent'] * 6
 
 trials = (list(zip(word,colour,condition))) 
 print(trials)
+np.random.shuffle(trials)
 
 
 #=====================
@@ -123,7 +123,7 @@ for block in range(nBlocks):
 df = pd.DataFrame(data={
  "Trial Number": trialNumbers, 
  "Word": words,
- "Condition": condition,
+ "Condition": conditions,
  "Ink Colours": colours, 
  "Accuracy": accuracies, 
  "Response Time": responseTimes
