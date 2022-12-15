@@ -28,7 +28,7 @@ filename = (str(expInfo['subject_nr']) + '_output.csv')
 #=====================
 #STIMULUS AND TRIAL SETTINGS
 #=====================
-nBlocks = 1
+nBlocks = 2
 nTrials = 18
 totalTrials = nTrials*nBlocks
 trial_timer = core.Clock()
@@ -40,7 +40,7 @@ colour = ['green'] + ['red'] + ['blue'] + ['red'] + ['blue'] + ['green'] + ['red
 word = ['dog'] + ['cat'] + ['house'] + ['bottle'] + ['blanket'] + ['pan'] + ['red'] + ['green'] + ['blue'] + ['green'] + ['blue'] + ['red'] + ['green','blue','red','blue','red','green'] 
 condition = ['neutral'] * 6 + ['congruent'] * 6 + ['incongruent'] * 6
 
-trials = (list(zip(word,colour,condition))) 
+trials = (list(zip(word,colour,condition))) * 2
 print(trials)
 np.random.shuffle(trials)
 
@@ -87,6 +87,7 @@ for block in range(nBlocks):
         #===================== 
         overallTrial = block*nTrials+trial 
         trialNumbers[overallTrial] = trial+1
+        blockNumbers[overallTrial] = block+1
         colours[overallTrial] = trials[overallTrial][1]
         words[overallTrial] = trials[overallTrial][0] 
         conditions[overallTrial] = trials[overallTrial][2]
@@ -121,6 +122,7 @@ for block in range(nBlocks):
         print('Trial:', trial+1, 'Condition:', trials[overallTrial][2], ', Word:', trials[overallTrial][0], ', Ink Colour:', trials[overallTrial][1] , ', Accuracy:', accuracies[overallTrial], ', Subject response:', keys, ', RT:', responseTimes[overallTrial])
 
 df = pd.DataFrame(data={
+ "Block Number": blockNumbers,
  "Trial Number": trialNumbers, 
  "Word": words,
  "Condition": conditions,
