@@ -30,7 +30,7 @@ This experiment records
     - accuracy          (Correct, Incorrect)
     - reaction time     (seconds)
 
-I saveed these into a csv output file
+I saved these into a csv output file. See file [_output.csv](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/FINAL%20Project/_output.csv)
 
 Words remained on the screen until the response was collected
 
