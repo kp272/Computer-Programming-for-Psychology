@@ -1,3 +1,44 @@
+There are 2 blocks of 18 trials each. 
+Each trial has a single word in a single coloured ink. 
+I used the colours 'red', 'green', and 'blue'. 
+Each block has 
+    6 "control" trials where the word and colour were irrelevant (ex: word "dog" in colour blue), 
+    6 "congruent" trials where the word and colour match (ex: word "red" in red), 
+    6 "incongruent" trials where the word and colour don't match (ex: word "red" in blue).
+The subject should press letters ('r', 'g', or 'b') to indicate the ink colour, not the word of the colour. (ex: for word "red" in blue, they have to pick blue) 
+This experiment records 
+    trials             (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)
+    blocks             (1, 2)
+    words              ('dog','cat','house','bottle','blanket','pan' for trials 1-6) and ('red','green','blue' for trials 7-18 )
+    ink colours        (red, green, blue)
+    responses          ('r', 'g', 'b')
+    accuracy          (Correct, Incorrect)
+    reaction time     (seconds)
+I saveed these into a csv output file
+Words remained on the screen until the response was collected
+
+each block looks something like this and I randmized this:
+control (6 trials)
+    dog in red
+    cat in red
+    house in green 
+    bottle in green
+    blanket in blue
+    pan in blue
+conguent (6 trials)
+    red in red
+    red in red
+    green in green 
+    green in green
+    blue in blue
+    blue in blue
+in congruent (6 trials)
+    red in green
+    red in blue
+    green in red 
+    green in blue
+    blue in red
+    blue in green
 
 
 
