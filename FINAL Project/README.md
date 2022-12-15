@@ -55,8 +55,8 @@ in congruent (6 trials)
     - blue in red
     - blue in green
 
-
-
+I used this picture as a refrence to design my experiment. The only difference is that instead of having 3 trials I doubled this picture so that there are 2 blocks with 3 trials each. 
+See file [Image_used_as_reference_to_design_experiment.jpg](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/FINAL%20Project/Image_used_as_reference_to_design_experiment.jpg)
 
 
 
