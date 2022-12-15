@@ -1,0 +1,19 @@
+Trial Number,Word,Condition,Ink Colours,Accuracy,Response Time
+17,green,neutral,green,Correct,1.425585136981681
+17,cat,neutral,red,Incorrect,0.9858310259878635
+17,dog,neutral,green,Incorrect,0.08904509688727558
+17,blue,neutral,blue,Incorrect,0.046081139938905835
+17,pan,neutral,green,Correct,0.193724607815966
+17,bottle,neutral,red,Correct,0.02167439181357622
+17,green,congruent,red,Incorrect,0.02400468708947301
+17,blue,congruent,green,Correct,0.17660638689994812
+17,red,congruent,red,Incorrect,0.23995335004292428
+17,blanket,congruent,blue,Incorrect,0.22316665202379227
+17,green,congruent,red,Incorrect,0.24140066117979586
+17,red,congruent,blue,Incorrect,0.1981268241070211
+17,blue,incongruent,blue,Incorrect,0.2245263170916587
+17,red,incongruent,blue,Incorrect,0.19267802080139518
+17,green,incongruent,green,Correct,0.2074835228268057
+17,blue,incongruent,green,Correct,0.20117680192925036
+17,house,incongruent,blue,Incorrect,0.2296430440619588
+17,red,incongruent,red,Incorrect,0.2008486189879477
