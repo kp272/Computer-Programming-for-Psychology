@@ -34,7 +34,7 @@ I saved these into a csv output file. See file [_output.csv](https://github.com/
 
 Words remained on the screen until the response was collected
 
-each block looks something like this and I randmized this:
+Each block looks something like this where it has 18 trials. I randmized these 18 trials. So in total, there were 36 responses in total:
 
 control (6 trials)
 
@@ -45,7 +45,7 @@ control (6 trials)
     - blanket in blue
     - pan in blue
 
-conguent (6 trials)
+congruent (6 trials)
 
     - red in red
     - red in red
@@ -54,7 +54,7 @@ conguent (6 trials)
     - blue in blue
     - blue in blue
 
-in congruent (6 trials)
+incongruent (6 trials)
 
     - red in green
     - red in blue
