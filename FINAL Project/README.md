@@ -1,8 +1,10 @@
-My name is Kasti Patel. This file is the README file where I have explained my experiment and what it does in details.
+# My name is Kasti Patel. This file is the README file where I have explained my experiment and what it does in details.
 
 
-The name of my Final Project File where my code is "FinalProject.py" --> See file [FinalProject.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/FINAL%20Project/FinalProject.py)
+# The name of my Final Project File where my code is "FinalProject.py" --> See file [FinalProject.py](https://github.com/kp272/Computer-Programming-for-Psychology/blob/main/FINAL%20Project/FinalProject.py)
 
+
+# These are my comments: 
 
 There are 2 blocks of 18 trials each. 
 
